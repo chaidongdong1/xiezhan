@@ -1,0 +1,222 @@
+/* pages/inquiredetail/inquiredetail.wxss */
+.lists{
+	width:100%;
+	height: auto;
+	margin: 30rpx 0;
+}
+.lists-one{
+	width: 100%;
+	height: auto;
+	font-size: 28rpx;
+	color: #666;
+	padding-bottom: 20rpx;
+	border-bottom: 7px solid #ddd;
+}
+.lists-one view{
+	padding-bottom: 5rpx;
+	margin: 0 30rpx;
+}
+.lists-one view text{
+	font-size: 34rpx;
+	color: #bd934e;
+}
+.lists-one5{
+	width: 100%;
+	height: auto;
+	font-size: 28rpx;
+	color: #666;
+	padding-bottom: 20rpx;
+	border-bottom: 7px solid #ddd;
+}
+.lists-one5 view{
+	padding-top: 15rpx;
+	margin: 0 30rpx;
+	border-bottom: 1px solid #e5e5e5;
+	display: flex;
+	justify-content: space-between;
+}
+.lists-one1{
+	width: 100%;
+	height: auto;
+	font-size: 28rpx;
+	color: #777;
+	padding: 20rpx 0;
+	line-height: 46rpx;
+}
+.lists-one1 view:first-child{
+	display: flex;
+	justify-content:space-between;
+}
+.lists-one1 view{
+	margin: 0 30rpx;
+	padding-bottom: 5rpx;
+}
+.lists-one1-ys{
+	color: #333;
+}
+/*商品信息*/
+.lis{
+	width: 100%;
+	height: auto;
+	margin: 20rpx 0;
+}
+.list-one2{
+	width: 100%;
+	height: auto;
+}
+.list-top{
+	width: 100%;
+	height: 70rpx;
+	line-height: 70rpx;
+	border-top: 3px solid #bd934e;
+	font-size: 28rpx;
+	color: #333333;
+	display: flex;
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+}
+.list-top text{
+	margin: 0 30rpx;
+}
+.list-bottom{
+	width: 100%;
+	height: auto;
+	margin: 15rpx 0;
+}
+.list-b1{
+	margin: 0 30rpx;
+	font-size: 28rpx;
+	color: #666;
+	margin-top: 10rpx;
+	display: flex;
+	justify-content: space-between;
+}
+.list-b2{
+	padding: 15rpx 30rpx;
+	font-size: 30rpx;
+	color: #666;
+	border-top: 1px solid #ddd;
+	display: flex;
+	justify-content: flex-end;
+}
+.list-b2 text{
+	color: #f00;
+	font-size: 32rpx;
+}
+.lists-one3{
+	width: 100%;
+	height: auto;
+}
+.lists-one-sj{
+	width: 100%;
+	height: auto;
+	border-top: 1px solid #ddd;
+	padding: 10rpx 0;
+	font-size: 28rpx;
+	display: flex;
+	justify-content: space-between;
+}
+.lists-one-sj text{
+	padding: 0 30rpx;
+}
+
+
+/*快递信息*/
+.kd{
+	width: 100%;
+	height: auto;
+	position: relative;
+	border-top: 7px solid #ddd;
+	padding-top: 20rpx;
+}
+.inde-one{
+	padding: 0 30rpx;
+	height: auto;
+	line-height: 50rpx;
+	font-size: 28rpx;
+	margin-top: 5rpx;
+	color: #666;
+}
+.inde-kd{
+	padding: 0 30rpx;
+	height: 100rpx;
+	display: flex;
+	line-height: 40rpx;
+}
+.inde-kd-left{
+	width: 150rpx;
+	height: 100rpx;
+	line-height: 40rpx;
+	font-size: 24rpx;
+	color: #666;
+}
+.inde-kd-center{
+	width: 20rpx;
+	height: 100rpx;
+	border-left: 2px solid #999;
+	margin-left: 15rpx;
+	position: relative;
+}
+.index-kd-ceyuan{
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 50%;
+	background: #999;
+	position: absolute;
+	top: 32rpx;
+	left: -10rpx;
+}
+.inde-kd-right{
+	flex: 1;
+	font-size: 28rpx;
+	padding-left: 10rpx;
+	color: #333;
+	height: 80rpx;
+	line-height: 40rpx;
+	overflow: hidden;
+}
+.inde-kd-right1{
+	flex: 1;
+	font-size: 28rpx;
+	padding-left: 10rpx;
+	color: #333;
+	height: 80rpx;
+	line-height: 80rpx;
+	overflow: hidden;
+}
+.zuihou{
+	height: 40rpx;
+}
+.zuihou image{
+	position: absolute;
+	top: 30rpx;
+	left: -18rpx;
+}
+.chushi{
+	height: 80rpx;
+	margin-top: 30rpx;
+}
+.chushi image{
+	position: absolute;
+	top: 0;
+	left: -18rpx;
+}
+.kd button{
+	width: 250rpx;
+	height: 65rpx;
+	background: #BC924E;
+	color: #fff;
+	text-align: center;
+	line-height: 65rpx;
+	border-radius: 20rpx;
+	font-size: 28rpx;
+	position: absolute;
+	top: 90rpx;
+	right: 50rpx;
+}
+.kd-zw{
+	font-size: 28rpx;
+	color: #fff;
+	text-align: center;
+	margin: 30rpx;
+}

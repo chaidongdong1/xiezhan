@@ -1,0 +1,24 @@
+<!--pages/administration/administration.wxml-->
+<view class="admin container">
+	<navigator class="add-admin" url="../address/address">
+		<image src="../../assets/add-dz.png" mode="widthFix"></image>
+		<text>新增地址</text>
+	</navigator>
+	<navigator url="../address/address?title=修改地址&name={{item.userName}}&phone={{item.userPhone}}&address={{item.address}}&addr={{item.addr}}&isDefault={{item.isDefault}}&addressId={{item.addressId}}&latitude={{item.latitude}}&longitude={{item.longitude}}" class="admin-dz" wx:for="{{datas}}" wx:key="{{index}}">
+		<view class="admin-dz-left">
+			<image src="../../assets/add-dz1.png"></image>
+		</view>
+		<view class="admin-nr">
+			<view>姓名：{{item.userName}}</view>
+			<view>手机号：{{item.userPhone}}</view>
+			<view>地址：{{item.address}}{{item.addr}}<text class="admin-nr-mr" wx:if="{{item.isDefault == 1}}">【默认】</text></view>
+		</view>
+		<view class="admin-nr-sc" data-addressid="{{item.addressId}}" catchtap="handleDelAddress">
+			<image src="../../assets/add-dz2.png"></image>
+		</view>
+	</navigator>
+	<!-- 没有地址时 -->
+	<view wx:if="{{!datas || datas.length == 0}}" style="font-size: 28rpx; color: #333; margin: 50rpx 0; text-align: center; ">当前没有添加地址，请添加地址</view>
+	<!-- 提示信息 -->
+	<view wx:if="{{datas.length != 0 ? true : false}}" style="font-size: 28rpx; color: #999; margin: 30rpx 0; text-align: center; ">点击地址即可修改</view>
+</view>

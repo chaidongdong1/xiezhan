@@ -1,0 +1,25 @@
+<!--pages/preferential/preferential.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="pack container">
+	<!-- 第一个 -->
+	<view class="pack-one" wx:for="{{datas}}" wx:key="{{index}}">
+		<!-- 卡片内容 -->
+		<view class="pack-one-left">
+			<view class="pack-one-top">鞋栈 - {{item.articleTitle}}</view>
+			<view class="pack-one-center">{{item.articleContent}}</view>
+			<view class="pack-one-bottom">活动时间：{{item.startTime}} 至 {{item.endTime}}</view>
+		</view>
+		<!-- 购买按钮 -->
+		<navigator class="pack-one-right" url="../cardbuy/cardbuy?cardId={{item.catId}}">
+			<view>点击</view>
+			<view>购买</view>
+			<image src="../../assets/yhgm.png"></image>
+		</navigator>
+		<!-- 推荐 -->
+		<!-- <view class="pack-tj" wx:if="{{index == 0 ? true : flase}}">
+			<image src="../../assets/yhtj.png"></image>
+		</view> -->
+	</view>
+	<view wx:if="{{!datas || datas.length == 0}}" style="font-size: 28rpx; color: #666;text-align: center;margin: 20rpx 0;">暂无数据</view>
+</view>
+

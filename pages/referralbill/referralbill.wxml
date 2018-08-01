@@ -1,0 +1,14 @@
+<!--pages/referralbill/referralbill.wxml-->
+<view class="zd container">
+	<view class="zd-top">
+		<view>来源</view>
+		<view>类型</view>
+		<view>金额</view>
+	</view>
+	<view class="f32">{{loadingStatus == 1 ? '正在加载中...' : loadingStatus == 2 ? '暂无数据' : '' }}</view>
+	<view class="zd-top back" wx:for="{{lists}}" wx:key="{{index}}">
+		<view>{{item.userName}}</view>
+		<view>{{item.dataSrc}}</view>
+		<view>+{{item.money}}</view>
+	</view>
+</view>

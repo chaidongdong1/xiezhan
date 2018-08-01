@@ -1,0 +1,49 @@
+/* pages/about/about.wxss */
+.about{
+	width: 100%;
+	height: auto;
+}
+.about-zd{
+	width: 100%;
+	height: auto;
+	padding: 20rpx 0;
+	border-bottom: 5px solid #d9d9d9;
+}
+.about-dh{
+	width: 94%;
+	height: auto;
+	margin: 0 3%;
+	padding: 5rpx;
+	font-size: 28rpx;
+	color: #666;
+}
+.about-dh image{
+	width: 55rpx;
+	height: 30rpx;
+	padding-right: 20rpx;
+}
+.about-dh1{
+	width: 94%;
+	height: auto;
+	margin: 0 3%;
+	padding: 5rpx;
+	font-size: 28rpx;
+	color: #666;
+}
+.about-dh1 image{
+	width: 55rpx;
+	height: 30rpx;
+	padding-right: 20rpx;
+}
+.about-dh1{
+	display: flex;
+	justify-content: space-between;
+}
+.about-zd1{
+	width: 94%;
+	font-size: 36rpx;
+	color: #C09559;
+	padding: 10rpx 0;
+	margin: 0 3%;
+	border-bottom: 2px solid #C09559;
+}

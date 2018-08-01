@@ -1,0 +1,75 @@
+<!--pages/me/me.wxml-->
+<view class="me container">
+  <!-- top -->
+  <view class="me-top">
+    <view class="me-top-left">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="me-top-center">
+      <view>
+        <open-data type="userNickName"></open-data>
+      </view>
+      <navigator url="../modification/modification">{{!phone ? '请绑定手机号' : phone}}</navigator>
+      <view>返利：{{money}}</view>
+    </view>
+    <view class="me-top-right" bindtap="bindtapTuijian" >
+      <image src="../../assets/me-tjm.png" mode="widthFix"></image>
+      <view>推荐码</view>
+    </view>
+  </view>
+  <!-- center -->
+  <view class="me-center">
+    <view bindtap="bindtapFankui" class="me-ce-item" >
+      <image src="../../assets/me-01.png" mode="widthFix"></image>
+      <view>问题反馈</view>
+    </view>
+    <navigator class="me-ce-item" url="../message/message">
+      <image src="../../assets/me-02.png" mode="widthFix"></image>
+      <view>消息中心</view>
+      <view class="me-ce-hd" wx:if="{{xiaoxi == 0 ? false : true}}"></view>
+    </navigator>
+    <navigator class="me-ce-item" url="../helplist/helplist">
+      <image src="../../assets/me-03.png" mode="widthFix"></image>
+      <view>帮助中心</view>
+    </navigator>
+    <view class="me-ce-item" bindtap="handleServices">
+      <image src="../../assets/me-04.png" mode="widthFix"></image>
+      <view>电话客服</view>
+    </view>
+  </view>
+  <!-- bottom -->
+  <view class="me-bottom">
+    <view class="me-b1" bindtap="kapian">
+      <image src="../../assets/me-bottom-01.png"></image>
+      <text>卡片管理</text>
+    </view>
+    <navigator class="me-b1" url="../modification/modification">
+      <image src="../../assets/me-bottom-02.png"></image>
+      <text>个人信息{{phone ? '修改' : '绑定'}}</text>
+    </navigator>
+    <view class="me-b1" bindtap="mydingdan">
+      <image src="../../assets/me-bottom-03.png"></image>
+      <text>我的订单</text>
+    </view>
+    <navigator class="me-b1" url="../mallOrderList/mallOrderList">
+      <image src="../../assets/me-bottom-07.png"></image>
+      <text>商城订单</text>
+    </navigator>
+    <view bindtap="bindtapLishi" class="me-b1">
+      <image src="../../assets/me-bottom-04.png"></image>
+      <text>历史订单</text>
+    </view>
+    <view bindtap="bindtapDizhi" class="me-b1">
+      <image src="../../assets/me-bottom-05.png"></image>
+      <text>地址管理</text>
+    </view>
+    <navigator class="me-b1" url="../shopregister/shopregister">
+      <image src="../../assets/me-bottom-02.png"></image>
+      <text>商家登录</text>
+    </navigator>
+    <navigator class="me-b1" url="../about/about">
+      <image src="../../assets/me-bottom-06.png"></image>
+      <text>关于我们</text>
+    </navigator>
+  </view>
+</view>

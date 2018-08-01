@@ -1,0 +1,29 @@
+/* pages/helplist/helplist.wxss */
+.list{
+	width: 100%;
+	height: auto;
+	margin-top: 30rpx;
+}
+.list-one{
+	width: 100%;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #ccc;
+}
+.list-one view:first-child{
+	padding-left: 20rpx;
+	color: #333;
+}
+.list-one-item{
+	width: 20rpx;
+	height: 35rpx;
+	padding-top: 10rpx;
+	padding-right: 20rpx;
+}
+.list-one-item image{
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,44 @@
+<!--pages/about/about.wxml-->
+<view class="about">
+  <!-- 总信息 -->
+  <view class="about-zd">
+    <view class="about-zd1">{{datas.mallTitle}}</view>
+    <view bindtap="phoneNo" class="about-dh" style="padding-top: 15rpx;display: flex;justify-content: space-between;border-bottom: 1px solid #e5e5e5;">
+      <view>
+        <image src="../../assets/about1.png"></image>
+        <text>电话：{{datas.phoneNo}}</text>
+      </view>
+      <view><image style="width: 40rpx;height: 40rpx;" src="../../assets/gray_arrow.png" mode="widthFix"></image></view>
+    </view>
+    <view class="about-dh">
+      <image src="../../assets/about3.png"></image>
+      <text>微信号：{{datas.wechatkf}}</text>
+    </view> 
+    <view class="about-dh">
+      <image src="../../assets/about4.png"></image>
+      <text>QQ:{{datas.qqNo}}</text>
+    </view>
+    <view class="about-dh">
+      <image src="../../assets/about5.png"></image>
+      <text>邮箱：{{datas.email}}</text>
+    </view>
+  </view>
+  <!-- 店铺1 -->
+  <view class="about-zd" wx:for="{{dian}}" wx:key="{{index}}">
+    <view class="about-zd1">{{item.shopName}}</view>
+    <view bindtap="shopTel" data-index="{{index}}" class="about-dh1" style="margin-top: 20rpx; border-bottom: 1px solid #e5e5e5;">
+      <view>
+        <image src="../../assets/about1.png"></image>
+        <text>电话：{{item.shopTel}}</text>
+      </view>
+      <view><image style="width: 40rpx;height: 40rpx;" src="../../assets/gray_arrow.png" mode="widthFix"></image></view>
+    </view>
+    <view bindtap="shopAddress" data-index="{{index}}" class="about-dh1" style="margin-top: 20rpx; border-bottom: 1px solid #e5e5e5;">
+      <view>
+        <image src="../../assets/about2.png"></image>
+        <text>地址：{{item.shopAddress}}</text>
+      </view>
+      <view><image style="width: 40rpx;height: 40rpx;" src="../../assets/gray_arrow.png" mode="widthFix"></image></view>
+    </view>
+  </view>
+</view>

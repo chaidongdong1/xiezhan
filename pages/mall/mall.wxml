@@ -1,0 +1,32 @@
+<!--pages/mall/mall.wxml-->
+<view class="page-wapper">
+  <view class="goods-container">
+    <scroll-view scroll-y class="nav">
+      <view class="nav-wapper">
+        <view wx:for="{{classList}}" wx:key="{{index}}" class="{{index == navCurrentIndex ? 'active' : ''}}" data-index="{{index}}" bindtap="handleToggleNav">{{item.catName}}</view>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y class="content">
+      <view class="content-wapper">
+        <view class="main">
+          <block wx:for="{{classList[navCurrentIndex].child}}" wx:key="{{index}}">
+            <navigator url="../goodsList/goodsList?catId={{item.catId}}&title={{item.catName}}" class="pro-items" style="{{lists.length <= 3 ? 'float: left; height: 480rpx;' : ''}}">
+              <view class="top">
+                <image src="{{baseUrl}}{{item.catThumbs}}" mode="aspectFill"></image>
+              </view>
+              <view class="bottom">
+              	{{item.catName}}
+              </view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <navigator url="../trolley/trolley">
+    <view class="arc-btn-lg trolley">
+      <image src="../../assets/mall_02.png" style="width: 58rpx;height: 58rpx"></image>
+      <view class="corner" wx:if="{{totalTrolleyLen!=0}}">{{totalTrolleyLen}}</view>
+    </view>
+  </navigator>
+</view>

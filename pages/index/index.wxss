@@ -1,0 +1,211 @@
+/**index.wxss**/
+@import '../../wxParse/wxParse.wxss';
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banner{
+	width: 100%;
+	height: 360rpx;
+}
+.nav{
+	width: 100%;
+	height: auto;
+	display: flex;
+	padding: 20px 0;
+	background: #fff;
+	border-bottom: 1px solid #d9d9d9;
+}
+.nav-item{
+	width: 16%;
+	margin: 0 4%;
+	flex: 1;
+	text-align: center;
+}
+.nav-item image{
+	width: 100%;
+	height: auto;
+	padding-bottom: 10rpx;
+}
+
+/*服务介绍*/
+.fuwu{
+	width: 100%;
+	height: auto;
+}
+.fw-bt{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	color: #bc924e;
+	margin-bottom: 20px;
+	margin-top: 15rpx;
+}
+.fw-bt text{
+	font-size: 36rpx;
+	padding-bottom: 10rpx;
+}
+.fw-zw{
+	font-size: 36rpx;
+	position: relative;
+}
+.fw-hxz{
+	width: 30%;
+	border-top: 2px solid #bc924e;
+	position: absolute;
+	top: 22rpx;
+	left: 5%;
+}
+.fw-hxy{
+	width: 30%;
+	border-top: 2px solid #bc924e;
+	position: absolute;
+	top: 22rpx;
+	right: 5%;
+}
+.fw-nr{
+	width: 100%;
+	height: 630rpx;
+}
+.fw-nr1{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content:space-between;
+	flex-wrap:wrap;
+}
+.fw-nr-item{
+	width: 47%;
+	height: 190rpx;
+	margin: 0 1.5%;
+	margin-bottom: 15rpx;
+	position: relative;
+}
+.fw-nr-item image{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.fw-nr-item1{
+	width: 97%;
+	height: 190rpx;
+	margin: 0 auto 15rpx auto;
+	position: relative;
+}
+.fw-nr-item1 image{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.fw-nr-wz{
+	font-size: 40rpx;
+	color: #fff;
+	font-weight: 700;
+	text-align: center;
+	line-height: 190rpx;
+}
+
+/*服务品牌*/
+.pinpai{
+	width: 100%;
+	height: auto;
+}
+.pinpai-nr{
+	width: 100%;
+	height: 510rpx;
+	position: relative;
+}
+.pp-back{
+	width: 100%;
+	height: 100%;
+}
+.pp-back image{
+	width: 100%;
+	height: 100%;
+}
+.pp-top{
+	width: 85%;
+	height: 400rpx;
+	position: absolute;
+	top: 50rpx;
+	left: 7.5%;
+}
+.pp-top image{
+	width: 100%;
+	height: 100%;
+}
+.yhhd{
+	width: 100%;
+	height: 200rpx;
+	margin: 20rpx 0 50rpx 0;
+}
+.yhhd-img{
+	width: 100%;
+	height: 100%; 
+	border-radius: 10rpx;
+}
+/*企业文化*/
+.wh{
+	width: 100%;
+	height: auto;
+	background: #fff;
+}
+.wh-wz1{
+	width: 100%;
+	height: auto;
+	position: relative;
+	margin-bottom: 15rpx;
+}
+.wh-wz2{
+	text-align: center;
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #BC924E;
+	padding: 10rpx 10rpx 20rpx 10rpx;
+}
+.wh-wz3{
+	width: 60%;
+	margin: 0 20%;
+	text-align: center;
+	font-size: 26rpx;
+	color: #bc924e;
+	padding: 5rpx 0;
+	border:1px solid #bc924e;
+}
+.wh-wz4{
+	width: 86%;
+	margin: 20rpx 7%;
+	font-size: 26rpx;
+	line-height: 46rpx;
+	color: #bc924e;
+	text-indent: 2em;
+}
+.wh-wz-left{
+	width: 110rpx;
+	height: 210rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.wh-wz-left image{
+	width: 100%;
+	height: 100%;
+}
+.wh-wz-right{
+	width: 110rpx;
+	height: 210rpx;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.wh-wz-right image{
+	width: 100%;
+	height: 100%;
+}

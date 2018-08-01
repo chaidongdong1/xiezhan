@@ -1,0 +1,18 @@
+<!--pages/shopregister/shopregister.wxml-->
+<view class="sh">
+  <view class="shop-img">
+    <image src="../../assets/shopdl.jpg" mode="widthFix"></image>
+  </view>
+  <view class="shop">
+    <view class="shop-name">
+      <input type="type" placeholder="请输入用户名" placeholder-style="color:#999; font-size:28rpx;" bindinput="bindinputName" name="" value="{{names}}" />
+    </view>
+    <view class="shop-name">
+      <input type="password" placeholder-style="color:#999; font-size:28rpx;" bindinput="bindinputPassword" placeholder="请输入密码" name="" value="{{passwords}}" />
+    </view>
+    <view class="shop-btn">
+      <button bindtap="bindinputButton">立即登录</button>
+    </view>
+  </view>
+  <view class="shop-bottom">版权所有：鞋栈</view>
+</view>

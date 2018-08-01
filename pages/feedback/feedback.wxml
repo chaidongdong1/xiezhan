@@ -1,0 +1,22 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="fee container">
+	<view class="fee-title">
+		<image src="../../assets/wtfk1.png" mode="widthFix"></image>
+		<text>*请选择您反馈的问题</text>
+	</view>
+	<view class="fee-dx">
+		<radio-group class="fee-dx1" bindchange="radioChange">
+		  <label class="fee-dx1-labe" wx:for="{{items}}" wx:key="{{inex}}">
+		    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+		  </label>
+		</radio-group>
+	</view>
+	<view class="fee-title" style="margin-top: 30rpx;">
+		<image src="../../assets/wtfk2.png" mode="widthFix"></image>
+		<text>*请补充详细问题和意见</text>
+	</view>
+	<view class="fee-text">
+		<textarea value="{{text}}" bindinput="handleRecordText" placeholder="输入不得少于10个字" placeholder-style="color:#666;font-size:26rpx;"></textarea>
+	</view>
+	<button class="fee-button" bindtap="bintapTijao">提交</button>
+</view>

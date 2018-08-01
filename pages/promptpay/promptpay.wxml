@@ -1,0 +1,101 @@
+<!--pages/promptpay/promptpay.wxml-->
+<view class="pay container">
+  <view class="pay-one">
+    <view class="pay-two">订单信息</view>
+    <view class="inde-one">订单状态：{{names.orderStatus}}</view>
+    <view class="inde-one">订单编号：{{names.orderNo}}</view>
+    <view class="inde-one" style="font-size: 30rpx;">订单金额：<text>￥{{names.totalMoney}}</text></view>
+    <view class="inde-one" style="font-size: 30rpx;">快递金额：<text>￥{{names.deliverMoney}}</text></view>
+    <view class="pay-two">下单信息</view>
+    <view class="inde-one">姓名：{{names.userName}}</view>
+    <view class="inde-one">电话：{{names.userPhone}}</view>
+    <view class="inde-one">收货地址：{{names.userAddress}}</view>
+    <!-- <view class="inde-one">品牌：{{names.catName}}{{names.brandName}}</view> -->
+    <view class="inde-one">原因：{{names.reason}}</view>
+    <view class="inde-one">预约时间：{{names.receiveTime}}</view>
+    <view class="inde-one">备注信息：{{names.orderRemarks}}</view>
+    <view class="pay-two">商家信息</view>
+    <view class="inde-one">商家名称：{{names.shopName}}</view>
+    <view class="inde-one">商家电话：{{names.shopTel}}</view>
+    <view class="inde-one">商家地址：{{names.shopAddress}}</view>
+  </view>
+  <!-- 卡片 -->
+  <view class="kapian" style="height: 450rpx;">
+    <scroll-view scroll-x scroll-left="{{scrollleft}}" style="height: 100%;">
+      <view class="kan-one">
+        <!-- 第一个 -->
+        <view class="mcard-one mcard-active {{index == curIndex ? 'active' : ''}}" data-index="{{index}}" bindtap="handleCheckout" wx:for="{{datas}}" wx:key="{{index}}">
+          <view class="mcard-bj">
+            <image src="../../assets/kbglbj.png" mode="widthFix"></image>
+          </view>
+          <view class="mcard-nr">
+            <view class="mcard-aa">
+              <view class="mcard-kh">会员卡号：{{item.ucardNo}}</view>
+              <view class="mcard-kh">{{item.ucardName}}</view>
+            </view>
+            <!-- 卡片信息 -->
+            <view class="mcard-bottom">
+              <view class="mcard-b-left mcard-bottom-item">
+                <view class="mcard-kplx">卡片类别
+                  <text class="mcard-kplx-r">{{item.ucardType == 1 ? '储值卡' : '活动卡'}}</text>
+                </view>
+                <view class="mcard-kplx">卡片折扣
+                  <text class="mcard-kplx-r" style="font-size: 40rpx;">{{item.ucardDiscount*1/10}}折</text>
+                </view>
+                <view class="mcard-kplx">可用额度
+                  <text class="mcard-kplx-r" style="font-size: 40rpx;">￥{{item.ucardScore}}</text>
+                </view>
+                <view class="mcard-sj">开卡时间：{{item.createTime}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 没有卡片 -->
+        <navigator class="mcard-one" url="../package/package" style="width: 95%;" wx:if="{{!datas || datas.length == 0}}">
+          <view class="mcard-bj">
+            <image src="../../assets/kbglbj.png" mode="widthFix"></image>
+          </view>
+          <view class="mcard-nr">
+            <view class="mcard-aa">
+              <view class="mcard-kh">会员卡号：00000</view>
+              <view class="mcard-kh"></view>
+            </view>
+            <!-- 卡片信息 -->
+            <view class="mcard-dd">点击购买卡片</view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 按钮 -->
+  <view wx:if="{{!datas || datas.length == 0 ? false : true}}" class="pay-anniu" bindtap="showPopup" data-bh="{{names.orderNo}}" data-yf="{{names.totalMoney}}" data-kd="{{names.deliverMoney}}">
+    <button>立即支付{{datas.ucardNo}}</button>
+  </view>
+  <!-- 弹窗 -->
+  <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+    <view class="img-wapper">
+      <view class="f11">确认支付</view>
+      <view>订单编号：{{bianhao}}</view>
+      <view>支付卡号：{{kh}}</view>
+      <view>卡片名称：{{km}}</view>
+      <view>卡片折扣：<text>{{zk*1/10}}折</text></view>
+      <view>应付金额：
+        <text>￥{{yingfu}}</text>
+      </view>
+      <view>快递金额：
+        <text>￥{{kuaidi}}</text>
+      </view>
+      <view>优惠额度：
+        <text>￥{{yhed}}.00</text>
+      </view>
+      <view>实付金额：
+        <text>￥{{yingfu*1+kuaidi*1-yhed}}.00</text>
+      </view>
+      <view class="f11-zhu">注：您正在进行支付操作，请确认您的支付信息。</view>
+    </view>
+    <view class="btn" bindtap="bindtapZhifu">确认支付</view>
+    <view class="close" bindtap="handleClosePopup">
+      <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+    </view>
+  </view>
+</view>

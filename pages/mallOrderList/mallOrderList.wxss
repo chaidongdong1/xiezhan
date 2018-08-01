@@ -1,0 +1,89 @@
+/* pages/mallOrderList/mallOrderList.wxss */
+@import '../../styles/public.wxss';
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  padding: 0 15rpx;
+  background-color: #fff;
+  box-shadow: 0 3px 8px #ccc;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.header view {
+  width: 150rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.header view.active {
+  border-bottom: 4rpx #c09a64 solid;
+}
+
+.nodata {
+	text-align: center;
+	padding: 50rpx;
+}
+.nomore {
+	text-align: center;
+	padding: 30rpx;
+}
+/*订单列表*/
+.order-list-item {
+	background-color: #fff;
+	margin-bottom: 10rpx;
+	box-sizing: border-box;
+}
+.order-list-header {
+	display: flex;
+	line-height: 60rpx;
+	border-bottom: 1px solid #f0f0f0;
+	box-sizing: border-box;
+	padding: 10rpx 15rpx;
+}
+
+.order-list-header .lside {
+	flex: 1;
+}
+.order-list-main {
+	padding: 15rpx 0;
+}
+.order-list-goods {
+	display: flex;
+	align-items: center;
+	padding:6rpx 15rpx;
+}
+
+.order-list-goods .lside {
+	width: 190rpx;
+}
+
+.order-list-goods .lside image {
+	display: block;
+	width: 180rpx;
+	height: 180rpx;
+}
+
+.order-list-goods .rside {
+	flex: 1;
+	padding-left: 15rpx;
+}
+
+.order-list-footer{
+	text-align: right;
+	border-top: 1px solid #f0f0f0;
+}
+
+.order-list-footer view {
+	padding: 12rpx 60rpx;
+	font-size: 28rpx;
+	background-color: #c09a64;
+	display: inline-block;
+	text-align: center;
+	margin: 15rpx;
+	color: #fff;
+	border-radius: 4px;
+}

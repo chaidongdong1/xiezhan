@@ -1,0 +1,230 @@
+/* pages/settlement/settlement.wxss */
+
+@import '../../styles/public.wxss';
+.yyxd {
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+  padding: 15rpx;
+  box-sizing: border-box;
+}
+
+.remark-info {
+  width: 100%;
+  text-align: right;
+}
+
+.yyxd-name {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  line-height: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.yyxd-name-item {
+  width: 120rpx;
+}
+
+.yyxd-name-tb {
+  flex: 8%;
+}
+
+.yyxd-name-tb image {
+  width: 100%;
+  height: auto;
+}
+
+.yyxd-name-wz {
+  width: 27%;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+  display: flex;
+}
+
+.yyxd-name-input {
+  width: 65%;
+  font-size: 28rpx;
+  color: #333;
+  background: #eee;
+  overflow: hidden;
+  border-radius: 10rpx;
+  border: 1px solid #ddd;
+}
+
+.yyxd-name-input input {
+  background-color: #423834;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 5rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.yyxd-yy {
+  border-bottom: 1px dashed #999;
+  padding-bottom: 20rpx;
+}
+
+.yyxd-bottom {
+  border-bottom: 1px dashed #999;
+  padding-bottom: 30rpx;
+}
+
+.yyxd-name-input textarea {
+  width: 90%;
+  height: 200rpx;
+  background-color: #eee;
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  line-height: 44rpx;
+  color: #333;
+  padding: 10rpx 10px;
+  border-radius: 10rpx;
+}
+
+.yyxd-button {
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  margin: 50rpx 0;
+  padding: 40rpx 2.5%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+}
+
+.yyxd-button button {
+	flex: 1;
+	height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background-color: #BB9847;
+  line-height: 80rpx;
+  border-radius: 5px;
+  border: 0;
+}
+
+.yyxd-name-wz view {
+  flex: 1;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.picker {
+  padding-left: 20rpx;
+}
+
+.shou {
+  width: 100%;
+  height: auto;
+  display: flex;
+  border-bottom: 1px dashed #999;
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.shou-image {
+  width: 8%;
+  height: auto;
+  padding-top: 15rpx;
+}
+
+.shou-image image {
+  width: 100%;
+  height: 100%;
+}
+
+.shou-wz {
+  flex: 1;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 46rpx;
+  margin-left: 20rpx;
+  padding: 10rpx 0 10rpx 20rpx;
+}
+
+.shou-wz view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shou-wz view text {
+  color: #BB9847;
+}
+
+.show-tb {
+  width: 50rpx;
+  margin-left: 25rpx;
+  margin-top: 30rpx;
+}
+
+.pro-item {
+  height: 200rpx;
+  padding:0 15rpx;
+  width: 100%;
+  /*margin-top: 15rpx;*/
+  box-sizing: border-box;
+  border-radius: 2rpx;
+  position: relative;
+  overflow: hidden;
+  transition: all ease .5s;
+}
+
+.item-content {
+  display: flex;
+  height: 190rpx;
+  align-items: center;
+}
+
+.num {
+  color: #999;
+}
+
+.thumbnail {
+  width: 190rpx;
+  height: 190rpx;
+}
+
+.thumbnail image {
+  width: 190rpx;
+  height: 190rpx;
+}
+
+.info {
+  flex: 1;
+  padding: 0 12rpx 0 26rpx;
+  overflow: hidden;
+}
+
+.info view {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info>view:nth-child(1) {
+  padding-top: 5rpx;
+}
+
+.info>view:nth-child(2) {
+  padding-top: 6rpx;
+}
+
+.checkbox {
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.info .price {
+  display: flex;
+}
+
+.info .price view {
+  flex: 1;
+}

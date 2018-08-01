@@ -1,0 +1,24 @@
+/* pages/agreement/agreement.wxss */
+@import '../../wxParse/wxParse.wxss';
+.help{
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+}
+.help-title{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 30rpx;
+	color: #C8A572;
+}
+.help-nr{
+	width: 100%;
+	height: auto;
+	font-size: 26rpx;
+	color: #333;
+	padding-bottom: 5px;
+	line-height: 44rpx;
+	text-indent: 2em;
+}

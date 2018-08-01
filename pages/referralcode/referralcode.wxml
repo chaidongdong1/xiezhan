@@ -1,0 +1,39 @@
+<!--pages/referralcode/referralcode.wxml-->
+<view class="refer container">
+	<view class="refer-fx">
+		<view class="refer-fx-wk">
+			<image src="../../assets/tjmbk.png"></image>
+		</view>
+		<!-- 二维码 -->
+		<view class="re-fx-ewm">
+			<image bindtap="handleClickDownLoad" class="rqcode-img" src="{{url}}"></image>
+			<view class="imagess"><open-data type="userAvatarUrl"></open-data></view>
+		</view>
+	</view>
+	<view class="re-fx-wz">分享二维码参与返利</view>
+	<view class="re-fl">
+		<view class="re-fl-wz">我的返利：<text>￥{{money}}</text></view>
+		<view class="re-fl-tx" bindtap="showPopup">提现</view>
+	</view>
+	<view class="re-fl-zd">
+		<navigator class="re-zd-item" url="../referralbill/referralbill">我的账单</navigator>
+		<navigator class="re-zd-item" url="../recommend/recommend">我的推荐</navigator>
+	</view>
+	<view class="re-bottom">本活动最终解释权归鞋栈所有</view>
+	<view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+    <view class="img-wapper">
+      <view class="f11">提现</view>
+      <view>会员昵称：蹲在街角等幸福</view>
+      <view>当前额度：<text>￥{{money}}</text></view>
+      <view class="f11-zhu">注：您正在进行提现操作，请确认您的提现信息，您的提现将自动到账微信零钱，请注意查收</view>
+    </view>
+    <view class="line"></view>
+    <view class="input-wapper b-color">
+      <input placeholder-style="color:#8fa4a2" type="number" bindinput="handleRecordMoeny" placeholder="输入提现金额" />
+    </view>
+    <view class="btn" bindtap="handleConfirm">确认提现</view>
+    <view class="close" bindtap="handleClosePopup">
+      <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+    </view>
+  </view>
+</view>

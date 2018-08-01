@@ -1,0 +1,21 @@
+<!--pages/indexdetails/indexdetails.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="deta container">
+  <!-- 案例展示 -->
+  <view class="anli">
+    <!-- 标题 -->
+    <view class="anli-bt">
+      <view class="anli-bt-wz">
+        <view class="anli-tb-item">{{datas.articleTitle}}</view>
+      </view>
+    </view>
+    <!-- 内容 -->
+    <view class="anli-nr">
+      <!-- 详情 -->
+      <!-- <view class="anli-js">
+        <view class="anli-js-nr">{{datas.articleContent}}</view>
+      </view> -->
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+</view>

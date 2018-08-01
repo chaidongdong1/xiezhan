@@ -1,0 +1,121 @@
+/* pages/package/package.wxss */
+.card{
+	width: 100%;
+	height: auto;
+	margin-top: 30rpx;
+	overflow-x: hidden;
+}
+.card-top{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+.card-top-item{
+	flex: 0 0 30%;
+	text-align: center;
+	font-size: 30rpx;
+	color: #000;
+	padding: 15rpx 0;
+	border-radius: 10rpx;
+	background: #D9D9D9;
+	margin: 0 20rpx;
+}
+.mycard{
+	width: 100%;
+	height: auto;
+	margin: 20px 0;
+}
+.mcard-one{
+	width: 100%;
+	height: auto;
+	border:1px solid #444;
+	border-radius: 30rpx;
+	margin-bottom: 20px;
+	position: relative;
+	box-shadow: 0 0 50rpx #666; 
+	background: #3E3E3E;
+}
+.mcard-bj{
+	width: 50%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.mcard-bj image{
+	width: 100%;
+	height: 100%;
+}
+.mcard-nr{
+	color: #c28535;
+	font-size: 36rpx;
+}
+.mcard-kh{
+	padding: 10rpx 20rpx;
+	background: #BC924E;
+	color: #fff;
+	border-top-left-radius: 30rpx;
+	border-top-right-radius: 30rpx;
+}
+.mcard-bottom{
+	margin-top: 15px;
+	display: flex;
+	margin: 20rpx;
+}
+.mcard-b-left{
+	margin-top: 10px;
+	width: 60%;
+}
+.mcard-kplx{
+	font-size: 30rpx;
+	color: #d1a46a;
+	padding-bottom: 15rpx;
+}
+.mcard-kplx-r{
+	padding-left: 30rpx;
+}
+.mcard-sj{
+	font-size: 28rpx;
+	color: #90908f;
+	padding-top: 5px;
+}
+.mcard-b-right{
+	width: 40%;
+	height: auto;
+}
+.mcard-b-right image{
+	width: 35%;
+	height: auto;
+	margin-left: 45%;
+}
+.mcard-b-cz{
+	width: 85%;
+	height: 70rpx;
+	margin-left: 10%;
+	background: #C28535;
+	color: #fff;
+	font-size: 32rpx;
+	border-radius: 20px;
+	margin-top: 15px;
+	text-align: center;
+	line-height: 70rpx;
+}
+.mcard-martop{
+	margin-top: 60px;
+}
+.mcard-b-right text{
+	font-size: 40rpx;
+	padding-right: 5rpx;
+	line-height: 70rpx;
+}
+.macrd-shuom{
+	font-size: 24rpx;
+	color: #d1a46a;
+	text-align: center;
+	padding-bottom: 15rpx;
+}
+.inque-top-active{
+	color: #fff;
+	background: #c99312;
+}

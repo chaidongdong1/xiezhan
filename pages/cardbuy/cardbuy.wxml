@@ -1,0 +1,54 @@
+<!--pages/cardbuy/cardbuy.wxml-->
+<view class="card container">
+  <view class="mycard">
+    <!-- 第一个 -->
+    <view class="mcard-one">
+      <view class="mcard-bj">
+        <image src="../../assets/kbglbj.png" mode="widthFix"></image>
+      </view>
+      <view class="mcard-nr">
+        <view class="mcard-kh">{{datas.cardName}}</view>
+        <!-- 卡片信息 -->
+        <view class="mcard-bottom">
+          <view class="mcard-b-left mcard-bottom-item">
+            <view class="mcard-kplx">卡片折扣
+              <text class="mcard-kplx-r" style="font-size: 36rpx;">{{datas.cardDiscount*1/10}}折</text>
+            </view>
+            <view class="mcard-kplx">卡片金额
+              <text class="mcard-kplx-r" style="font-size: 36rpx;">￥{{datas.cardMoney}}</text>
+            </view>
+            <view class="mcard-kplx">卡片类型
+              <text class="mcard-kplx-r">{{datas.cardType == 2 ? '活动卡' : '储值卡'}}</text>
+            </view>
+          </view>
+          <view class="mcard-b-right mcard-bottom-item">
+            <image src="../../assets/kbgl.png" mode="widthFix"></image>
+          </view>
+        </view>
+        <!-- 说明 -->
+        <view class="macrd-shuom" wx:if="{{datas.cardType == 2 ? true : flase}}">活动时间：{{start}} 至 {{end}}</view>
+        <view class="macrd-shuom">活动卡用完卡片作废 储值卡可充值使用</view>
+      </view>
+    </view>
+    <view class="card-bottom">
+      <!-- <view class="card-b1">订单编号：4502235</view>
+      <view class="card-b1">下单时间：2018-04-15</view> -->
+      <view class="card-b1">订单金额：
+        <text>￥{{datas.cardMoney}}</text>
+      </view>
+      <view class="card-b1">用户名 ：
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class="card-b2">注：点击提交暨表示已阅读并同意</view>
+      <view class="card-b2" style="margin-top: 15rpx;display: flex;">
+        <radio-group  bindchange="radioChange">
+          <label class="radio" >
+            <radio checked="{{checked}}" />
+          </label>
+        </radio-group>
+        <navigator class="card-b3" style="padding-left: 10rpx; font-size: 28rpx;" url="../agreement/agreement">《用户协议》</navigator>
+      </view>
+      <button bindtap="confirmBuy" data-cardid="{{item.cardId}}">确认购买</button>
+    </view>
+  </view>
+</view>

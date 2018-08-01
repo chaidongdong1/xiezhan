@@ -1,0 +1,109 @@
+/* pages/address/address.wxss */
+.add{
+	width: 100%;
+	height: auto;
+	margin-top: 20rpx;
+}
+.add-top{
+	width: 100%;
+	height: auto;
+	background: #ccc;
+	padding: 10rpx;
+	border-radius: 15rpx;
+}
+.add-top image{
+	width: 35rpx;
+	height: 25rpx;
+	padding-right: 20rpx;
+}
+.add-top text{
+	font-size: 28rpx;
+	color: #333;
+	padding-left: 10rpx;
+}
+.add-center{
+	width: 100%;
+	height: auto;
+	margin-top: 50rpx;
+}
+.add-center1{
+	width: 100%;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	color: #333;
+	margin-bottom: 30rpx;
+	display: flex;
+}
+.add-c-name{
+	width: 150rpx;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.add-c-name view{
+	flex: 1;
+}
+.add-center1 input{
+	flex: 1;
+	background: #eee;
+	border-radius: 10rpx;
+	height: 100%;
+	font-size: 26rpx;
+	color: #333;
+	padding: 0 15rpx;
+	border:1px solid #ddd;
+}
+.add-center-aaa image{
+	width: 35rpx;
+	height: 35rpx;
+	position: absolute;
+	top: 50%;
+	left: 15rpx;
+	margin-top: -17.5rpx;
+}
+.add-center1 textarea{
+	flex: 1;
+	height: 200rpx;
+	padding: 15rpx;
+	font-size: 26rpx;
+	line-height: 46rpx;
+	color: #333;
+	border-radius: 10rpx;
+	background: #eee;
+	border:1px solid #ddd;
+}
+.add-ss{
+	flex: 1;
+	height: 70rpx;
+	overflow: hidden;
+	line-height: 70rpx;
+	display: inline-block;
+}
+.add-ce-radio{
+	font-size: 26rpx;
+	color: #333;
+	margin-top: 200rpx;
+}
+.add-ce-button{
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	margin-top: 50rpx;
+}
+.add-ce-button button{
+	background: #BC924E;
+	text-align: center;
+	font-size: 30rpx;
+	color: #fff;
+}
+.add-center-aaa{
+	width: 98%;
+	height: 70rpx;
+	margin-left: 2%;
+	background: #eee;
+	border-radius: 15rpx;
+	position: relative;
+	padding-left: 70rpx;
+	border:1px solid #ddd;
+}

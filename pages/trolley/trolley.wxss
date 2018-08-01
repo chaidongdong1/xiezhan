@@ -1,0 +1,195 @@
+/* pages/trolley/trolley.wxss */
+@import '../../styles/public.wxss';
+.container {
+  padding: 0;
+}
+.test-container {
+  min-height: 1184rpx;
+}
+
+.main {
+  width: 100%;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+}
+
+.pro-item {
+  height: 220rpx;
+  padding: 15rpx;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 15rpx;
+  box-sizing: border-box;
+  border-radius: 2rpx;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 5px #ccc;
+  transition: all ease .5s;
+}
+
+.item-content {
+  display: flex;
+  height: 190rpx;
+  align-items: center;
+}
+
+.num {
+  color: #999;
+}
+
+.thumbnail {
+  width: 190rpx;
+  height: 190rpx;
+}
+
+.thumbnail image {
+  width: 190rpx;
+  height: 190rpx;
+}
+
+.info {
+  flex: 1;
+  padding: 0 12rpx 0 26rpx;
+  overflow: hidden;
+}
+
+.info view {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info>view:nth-child(1) {
+  padding-top: 5rpx;
+}
+
+.info>view:nth-child(2) {
+  padding-top: 6rpx;
+}
+
+.checkbox {
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.info .price {
+  display: flex;
+}
+
+.info .price view {
+  flex: 1;
+}
+
+.item-control {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .8);
+  opacity: 0;
+}
+
+.item-control .del,
+.item-control .buy {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  float: right;
+  margin-top: 60rpx;
+  margin-right: 15rpx;
+  transition: all ease .4s;
+  overflow: hidden;
+}
+
+.footer {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  box-shadow: 0 -3rpx 5rpx #eee;
+}
+
+.footer>view:nth-child(1) {
+  padding: 15rpx 8rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.footer>view:nth-child(2) {
+  flex: 1;
+  line-height: 120rpx;
+  text-align: right;
+  padding-right: 20rpx;
+}
+
+.footer>view:nth-child(3) {
+  width: 240rpx;
+  text-align: center;
+}
+
+.footer>view:nth-child(3) view {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  width: 90%;
+  margin: 20rpx auto;
+  box-shadow: 0 0 8px #999;
+}
+
+.loadbox {
+  height: 300rpx;
+}
+
+.btn {
+  display: block;
+  color: #fff;
+  text-align: center;
+}
+
+.loading-box {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px #ccc;
+  margin: 50rpx auto;
+}
+
+.guide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  background-color: #fff;
+  box-shadow: 0 0 20px #ccc;
+  height: 52rpx;
+  line-height: 52rpx;
+}
+
+.close-msg {
+  position: absolute;
+  right: 15rpx;
+  top: 20rpx;
+}
+
+.though {
+  text-decoration: line-through;
+}
+
+.main-bgi {
+  background-image: none;
+  background-color: #C28535;
+}
+
+.nodata {
+  text-align: center;
+  width: 100%;
+  padding: 50rpx;
+}

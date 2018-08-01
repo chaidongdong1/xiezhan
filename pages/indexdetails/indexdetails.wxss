@@ -1,0 +1,103 @@
+/* pages/indexdetails/indexdetails.wxss */
+@import '../../wxParse/wxParse.wxss';
+.deta{
+	width: 100%;
+	height: auto;
+	margin-top: 30rpx;
+}
+/*案例展示*/
+.anli{
+	width: 100%;
+	height: auto;
+}
+.anli-bt{
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+.anli-bt-wz{
+	width: 60%;
+	height: auto;
+	margin: 0 20%;
+	font-size: 34rpx;
+	color: #333;
+	display: flex;
+}
+.anli-tb-left{
+	width: 30%;
+	height: auto;
+}
+.anli-tb-left image{
+	width: 100%;
+	height: auto;
+}
+.anli-tb-right{
+	width: 30%;
+	height: auto;
+}
+.anli-tb-right image{
+	width: 100%;
+	height: auto;
+}
+.anli-tb-item{
+	flex: 1;
+}
+.anli-tb-item01{
+	flex: 0 0 28%;
+}
+.anli-nr{
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+	overflow-x: hidden;
+}
+.anli-xnr{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	display: flex;
+}
+.anli-xnr-item{
+	flex: 1;
+	font-size: 24rpx;
+	color: #333;
+}
+.anli-tp{
+	width: 100%;
+	height: auto;
+	margin-top: 5px;
+}
+.anli-tp1{
+	width: 100%;
+	background-color: #fff;
+	height: auto;
+	padding: 30rpx 0;
+	display: flex;
+	margin-bottom: 15px;
+}
+.anli-tp-item{
+	flex: 1;
+}
+.anli-tp-item image{
+	width: 80%;
+	height: auto;
+	margin: 0 10%;
+}
+.anli-js{
+	width: 100%;
+	height: auto;
+	margin-bottom: 30rpx;
+}
+.anli-js-bt{
+	width: 100%;
+	height: auto;
+	margin: 15px 0 10px 0;
+	font-size: 34rpx;
+	color: #BC924E;
+}
+.anli-js-nr{
+	font-size: 24rpx;
+	color: #333;
+	line-height: 44rpx;
+	padding-bottom: 8rpx;
+}

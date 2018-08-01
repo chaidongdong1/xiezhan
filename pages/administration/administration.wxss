@@ -1,0 +1,63 @@
+/* pages/administration/administration.wxss */
+.admin{
+	width: 100%;
+	height: auto;
+	margin-top: 30rpx;
+}
+.add-admin{
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 28rpx;
+	color: #ebcec0;
+	background: #eee;
+	position: relative;
+	box-shadow: 0 0 20rpx #ccc;
+}
+.add-admin text{
+	color: #333;
+	padding-left: 70rpx;
+}
+.add-admin image{
+	width: 30rpx;
+	height: 30rpx;
+	position: absolute;
+	top: 25rpx;
+	left: 20rpx;
+}
+.admin-dz{
+	width: 100%;
+	height: auto;
+	margin-top: 30rpx;
+	display: flex;
+	background: #eee;
+	box-shadow: 0 0 20rpx #ccc;
+}
+.admin-dz-left{
+	width: 110rpx;
+	height: 70rpx;
+	padding: 50rpx 20rpx;
+}
+.admin-dz-left image{
+	width: 100%;
+	height: 100%;
+}
+.admin-nr{
+	flex: 1;
+	font-size: 28rpx;
+	color: #333;
+	line-height: 46rpx;
+	padding: 20rpx 20rpx 20rpx 20rpx;
+}
+.admin-nr-mr{
+	color: #B97D1C;
+}
+.admin-nr-sc{
+	width: 40rpx;
+	height: 47rpx;
+	padding: 20rpx 15rpx;
+}
+.admin-nr-sc image{
+	width: 100%;
+	height: 100%;
+}

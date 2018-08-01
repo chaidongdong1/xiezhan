@@ -1,0 +1,366 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: #353535;
+}
+
+.loadbox {
+  height: 184rpx;
+  width: 170rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+page {
+  background-color: #f0f0f0;
+}
+
+
+/* *                      公共样式
+ * *************************************************************
+ * *****************************************************************
+ * *********************************************************************
+ * *************************************************************************
+ * *****************************************************************************/
+
+.f36 {
+  font-size: 36rpx;
+}
+
+.f32 {
+  font-size: 32rpx;
+}
+
+.f28 {
+  font-size: 28rpx;
+}
+
+.f26 {
+  font-size: 26rpx;
+}
+
+.f24 {
+  font-size: 24rpx;
+}
+
+.f22 {
+  font-size: 22rpx;
+}
+
+.gray01 {
+  color: #353535;
+}
+
+.gray02 {
+  color: #444;
+}
+
+.gray03 {
+  color: #555;
+}
+
+.gray04 {
+  color: #666;
+}
+
+.gray05 {
+  color: #999;
+}
+
+.gray06 {
+  color: #bbb;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.w-color {
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.green-color {
+  color: #1aad19;
+}
+
+
+/*466ede*/
+
+.main-bg {
+  background-color: #1aaade;
+  color: #fff;
+}
+
+.main-bgi {
+  background-image: linear-gradient(to right, #1aaade, #2e8fde);
+}
+
+.main-color {
+  color: #1aaade;
+}
+
+.red-bg {
+  background-color: #e8380d;
+  color: #fff;
+}
+
+.red-color {
+  color: #e8380d;
+}
+
+.box-shadow {
+  box-shadow: 0 2px 8px #999;
+  border-radius: 2px;
+}
+
+.btn {
+  width: 180rpx;
+  height: 52rpx;
+  padding: 15rpx 40rpx;
+  text-align: center;
+  display: flex;
+  line-height: 52rpx;
+  box-shadow: 0 2px 8px #999;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #1aaade, #2e8fde);
+}
+
+.btn text {
+  padding-left: 12rpx;
+}
+
+.btn image {
+  margin-top: 5rpx;
+}
+
+.btn-hover {
+  background-color: #0996c9;
+}
+
+.main {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+}
+
+.placeholder-box100 {
+  width: 100%;
+  height: 100rpx;
+}
+
+.placeholder-box120 {
+  width: 100%;
+  height: 120rpx;
+}
+
+.pointer {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background-color: #e8380d;
+}
+
+.pointer-gray {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background-color: #999;
+}
+
+
+/*块标题*/
+
+.block-title {
+  height: 112rpx;
+  line-height: 112rpx;
+  color: #1aaade;
+  font-size: 32rpx;
+  border-bottom: 1px solid #ccc;
+  padding-left: 30rpx;
+}
+
+.block-title text {
+  padding-left: 10rpx;
+}
+
+
+/* 结算栏图标 */
+
+.arc-btn-xs {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #1aaade;
+  color: #fff;
+  border-radius: 40rpx;
+  position: relative;
+  margin: 20rpx auto;
+}
+
+.arc-btn-xs image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.arc-btn-xs .corner {
+  width: 32rpx;
+  height: 32rpx;
+  font-size: 18rpx;
+  background-color: #e8380d;
+  border-radius: 16rpx;
+  position: absolute;
+  right: -6rpx;
+  top: -6rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+
+.arc-btn-lg {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #1aaade;
+  color: #fff;
+  border-radius: 50rpx;
+  position: relative;
+  background-image: linear-gradient(to right, #1aaade, #2e8fde);
+}
+
+.arc-btn-lg image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.arc-btn-lg .corner {
+  width: 34rpx;
+  height: 34rpx;
+  font-size: 18rpx;
+  background-color: #e8380d;
+  border-radius: 16rpx;
+  position: absolute;
+  right: 0;
+  top: 5rpx;
+  text-align: center;
+  line-height: 34rpx;
+}
+
+
+/*瀑布流*/
+
+.pro-list-box {
+  width: 100%;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  column-count: 2;
+  column-gap: 15rpx;
+  font-size: 0;
+}
+
+.pro-list-box .pro-item {
+  overflow: hidden;
+  border-radius: 4rpx;
+  background-color: #fff;
+  margin-bottom: 15rpx;
+  padding-bottom: 15rpx;
+  transition: all .4s ease-in-out;
+  width: 100%;
+  display: inline-block;
+}
+
+.pro-list-box .pro-item image {
+  width: 100%;
+}
+
+.pro-list-box .pro-title {
+  margin: 12rpx 0 8rpx;
+}
+
+.pro-list-box .info {
+  width: 100%;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+}
+
+.pro-list-box .info>view {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/*通用底部*/
+
+.public-footer {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #999;
+  font-size: 26rpx;
+  position: relative;
+}
+
+.public-footer text {
+  display: inline-block;
+  width: 160rpx;
+  height: 1px;
+  background-color: #999;
+  vertical-align: middle;
+}
+
+.public-footer text:first-child {
+  margin-right: 20rpx;
+}
+
+.public-footer text:last-child {
+  margin-left: 20rpx;
+}
+
+.notice {
+  padding-top: 15rpx;
+}
+
+.notice navigator {
+  display: inline-block;
+}
+
+.copartner-list-wapper {
+  width: 100%;
+  line-height: 80rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 15rpx 22rpx;
+  font-size: 30rpx;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.copartner-list-wapper .total {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 25rpx;
+  font-size: 24rpx;
+}

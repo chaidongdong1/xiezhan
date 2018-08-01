@@ -1,0 +1,207 @@
+/* pages/referralcode/referralcode.wxss */
+.refer{
+	width: 100%;
+	height: auto;
+}
+.refer-fx{
+	width: 100%;
+	height: 510rpx;
+	margin-top: 130rpx;
+	position: relative;
+}
+.refer-fx-wk{
+	width: 500rpx;
+	height: 500rpx;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 50%;
+	margin-left: -250rpx;
+}
+.refer-fx-wk image{
+	width: 100%;
+	height: 100%;
+}
+.re-fx-ewm{
+	width: 340rpx;
+	height: 340rpx;
+	position: absolute;
+	top: 70rpx;
+	left: 50%;
+	z-index: 2;
+	margin-left: -180rpx;
+}
+.re-fx-ewm .rqcode-img{
+	width: 100%;
+	height: 100%;
+}
+
+.re-fx-ewm .user-photo{
+	
+}
+.re-fx-wz{
+	width: 100%;
+	font-size: 32rpx;
+	height:auto;
+	margin-top: 15rpx;
+	text-align: center;
+	color: #333;
+	margin-bottom: 40rpx;
+}
+.re-fl{
+	width: 93%;
+	height: auto;
+	background: #ccc;
+	margin:40rpx 0;
+	padding: 30rpx;
+	border-radius: 15rpx;
+	display: flex;
+}
+.re-fl-wz{
+	flex: 1;
+	font-size: 36rpx;
+	color: #333;
+}
+.re-fl-wz text{
+	font-size: 40rpx;
+	color: #B97D1C;
+}
+.re-fl-tx{
+	width: 200rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background: #B97D1C;
+	color: #fff;
+	border-radius: 30rpx;
+	margin-right: 20rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+.re-fl-zd{
+	width: 100%;
+	height: auto;
+	display: flex;
+	margin-top: 20rpx;
+}
+.re-zd-item{
+	flex: 1;
+	text-align: center;
+	font-size: 30rpx;
+	color: #333;
+}
+.re-bottom{
+	position: absolute;
+	bottom: 50rpx;
+	font-size: 24rpx;
+	color: #666;
+}
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 9999;
+  transition: all ease .6s;
+}
+
+.return-deposit {
+  position: fixed;
+  width: 92%;
+  height: 700rpx;
+  background-color: #7d7b77;
+  z-index: 10000;
+  border-radius: 20rpx;
+  left: 0;
+  right: 0;
+  margin: 200rpx auto 0;
+  transition: all ease-in-out .4s;
+}
+
+.img-wapper {
+  width: 85%;
+  height: 300rpx;
+  margin: 0 auto 10rpx;
+  font-size: 30rpx;
+  color: #f6f6f6;
+  padding-left: 40rpx;
+  line-height: 54rpx;
+}
+.f11-zhu{
+	font-size: 24rpx;
+	color: #feca84;
+}
+
+.r-title {
+  margin-top: -30rpx;
+}
+
+.line {
+  height: 1px;
+  background-color: #eff3f6;
+  margin: 30rpx 0;
+}
+
+.input-wapper {
+  width: 92%;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  margin-bottom: 50rpx;
+  border: 2rpx solid #fff;
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+
+.input-wapper input {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+  color: #000;
+}
+
+.btn {
+  width: 92%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+  margin: auto;
+  margin-bottom: 30rpx;
+  background: #f3b15a;
+}
+
+.close {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: -200rpx;
+  text-align: center;
+}
+.img-wapper .f11{
+	text-align: center;
+	font-size: 38rpx;
+	color: #fff;
+	margin: 40rpx 0;
+}
+.img-wapper text{
+	font-size: 34rpx;
+	color: #feca84;
+}
+.imagess{
+	width: 156rpx;
+	height: 156rpx;
+	position: absolute;
+	left: 0;
+	right: -1rpx;
+	top:-1rpx;
+	bottom: 0;
+	margin: auto;
+	border-radius: 50%;
+	overflow: hidden;
+}

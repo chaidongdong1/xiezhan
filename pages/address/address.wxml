@@ -1,0 +1,58 @@
+<!--pages/address/address.wxml-->
+<veiw class="add container">
+  <!-- <view class="add-top">
+    <image src="../../assets/dzxx1.png"></image>
+    <text>地址信息</text>
+  </view> -->
+  <view class="add-center">
+    <view class="add-center1">
+      <view class="add-c-name">
+        <view>姓</view>
+        <view>名</view>
+        <view>：</view>
+      </view>
+      <input type="text" value="{{name}}" name="" placeholder="请输入您的名字" bindinput="handleRecordName" placeholder-style="color:#666;" />
+    </view>
+    <view class="add-center1">
+      <view class="add-c-name">
+        <view>手</view>
+        <view>机</view>
+        <view>号</view>
+        <view>：</view>
+      </view>
+      <input type="number" maxlength="11" value="{{phone}}" name="" placeholder="请输入您的手机号" placeholder-style="color:#666;" bindinput="handleRecordPhone" />
+    </view>
+    <view class="add-center1" bindtap="hadleChooseAddress">
+      <view class="add-c-name">
+        <view>选</view>
+        <view>择</view>
+        <view>地</view>
+        <view>址</view>
+        <view>：</view>
+      </view>
+      <view class="add-center-aaa">
+        <image src="../../assets/dzxx2.png"></image>
+        <text class="add-ss">{{address}}</text>
+      </view>
+    </view>
+    <view class="add-center1">
+      <view class="add-c-name">
+        <view>详</view>
+        <view>细</view>
+        <view>地</view>
+        <view>址</view>
+        <view>：</view>
+      </view>
+      <textarea value="{{text}}" maxlength="50" placeholder="请输入您的详细地址（不超过50个字）" placeholder-style="color:#666;" bindinput="handleRecordText"></textarea>
+    </view>
+    <view class="add-ce-radio">
+      <radio-group bindchange="handleRadioChange">
+        <checkbox value="default" checked="{{isDefault1}}" style="border-radius: 50%;" />
+        <text>设为默认地址</text>
+      </radio-group>
+    </view>
+    <view class="add-ce-button" bindtap="handButton">
+      <button>确认{{isAdd ? '添加' : '修改'}}</button>
+    </view>
+  </view>
+</veiw>

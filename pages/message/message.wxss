@@ -1,0 +1,52 @@
+/* pages/message/message.wxss */
+.mess{
+  width: 100%;
+  height: auto;
+  margin-top: 20rpx;
+}
+.mess-one{
+  width: 100%;
+  height: auto;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background: #eee;
+  position: relative;
+  border-radius: 10rpx;
+  box-shadow: 10rpx 10rpx 20rpx #ddd;
+}
+.mess-one-wd{
+  width: 18rpx;
+  height: 18rpx;
+  background: #f00;
+  border-radius: 50%;
+  position: absolute;
+  top: 36rpx;
+  left: 30rpx;
+}
+.mess-one-yd{
+  width: 18rpx;
+  height: 18rpx;
+  background: #666;
+  border-radius: 50%;
+  position: absolute;
+  top: 36rpx;
+  left: 30rpx;
+}
+.mess-one1{
+  font-size: 28rpx;
+  color: #333;
+  line-height: 48rpx;
+  padding-left: 50rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.mess-one1 text{
+  font-size: 24rpx;
+  color: #666;
+}
+.mess-one2{
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 50rpx;
+  padding-right: 10rpx;
+}

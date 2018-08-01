@@ -1,0 +1,19 @@
+<!--pages/selectaddress/selectaddress.wxml-->
+<view class="admin container">
+	<navigator class="add-admin" url="../address/address">
+		<image src="../../assets/add-dz.png" mode="widthFix"></image>
+		<text>新增地址</text>
+	</navigator>
+	<view class="admin-dz" wx:for="{{datas}}" bindtap="handleChooseAddress" data-index="{{index}}" wx:key="{{index}}">
+		<view class="admin-dz-left">
+			<image src="../../assets/add-dz1.png"></image>
+		</view>
+		<view class="admin-nr">
+			<view>姓名：{{item.userName}}</view>
+			<view>手机号：{{item.userPhone}}</view>
+			<view>地址：{{item.address}}{{item.addr}}<text class="admin-nr-mr" wx:if="{{item.isDefault == 1}}">【默认】</text></view>
+		</view>
+	</view>
+	<view class="admin-xz" wx:if="{{!datas ? false : true }}">点击地址即可选择</view>
+</view>
+

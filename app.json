@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/register/register",
+    "pages/mallOrderList/mallOrderList",
+    "pages/modification/modification",
+    "pages/mycard/mycard",
+    "pages/booking/booking",
+    "pages/me/me",
+    "pages/package/package",
+    "pages/preferential/preferential",
+    "pages/inquire/inquire",
+    "pages/index/index",
+    "pages/referralcode/referralcode",
+    
+    "pages/mall/mall",
+    "pages/mallOrderDetail/mallOrderDetail",
+    "pages/settlement/settlement",
+    "pages/goodsDetail/goodsDetail",
+    "pages/goodsList/goodsList",
+    "pages/trolley/trolley",
+    "pages/shopregister/shopregister",
+    "pages/message/message",
+    "pages/inquiredetails/inquiredetails",
+    "pages/shoplist/shoplist",
+    "pages/shopdetails/shopdetails",
+    "pages/recommend/recommend",
+    "pages/referralbill/referralbill",
+    "pages/selectaddress/selectaddress",
+    "pages/pricedetail/pricedetail",
+    "pages/indexdetails/indexdetails",
+    "pages/helplist/helplist",
+    "pages/help/help",
+    "pages/feedback/feedback",
+    "pages/expensecalendar/expensecalendar",
+    "pages/administration/administration",
+    "pages/address/address",
+    "pages/about/about",
+    "pages/agreement/agreement",
+    "pages/cardbuy/cardbuy",
+    "pages/promptpay/promptpay",
+    "pages/logs/logs"
+  ],
+  "tabBar":
+  {
+    "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "assets/home.png",
+      "selectedIconPath": "assets/homehover.png"
+    },
+    {
+      "pagePath": "pages/mall/mall",
+      "text": "商城",
+      "iconPath": "assets/mall.png",
+      "selectedIconPath": "assets/mallhover.png"
+    },
+    {
+      "pagePath": "pages/inquire/inquire",
+      "text": "订单查询",
+      "iconPath": "assets/ddcx.png",
+      "selectedIconPath": "assets/hoverddcx.png"
+    },
+    {
+      "pagePath": "pages/mycard/mycard",
+      "text": "我的卡包",
+      "iconPath": "assets/kabao.png",
+      "selectedIconPath": "assets/hoverkabao.png"
+    },
+    {
+      "pagePath": "pages/me/me",
+      "text": "个人中心",
+      "iconPath": "assets/me.png",
+      "selectedIconPath": "assets/hoverme.png"
+    }],
+    "color": "#bebcbc",
+    "backgroundColor": "#1D1D1D",
+    "selectedColor": "#C09A64",
+    "position": "bottom",
+    "borderStyle": "#c0c0c0"
+  },
+  "window":
+  {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#030303",
+    "navigationBarTextStyle": "white"
+  }
+}

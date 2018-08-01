@@ -1,0 +1,17 @@
+/**app.wxss**/
+@import 'styles/weui.wxss';
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 15px;
+  overflow-x: hidden;
+} 
+page {
+	background: #F5F3ED;
+	color: #333;
+}

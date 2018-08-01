@@ -1,0 +1,5 @@
+<!--pages/pricedetail/pricedetail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="pric container">
+	<view style="width: 100%;"><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>
+</view>

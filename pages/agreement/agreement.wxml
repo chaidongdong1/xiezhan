@@ -1,0 +1,7 @@
+<!--pages/agreement/agreement.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<!--pages/help/help.wxml-->
+<view class="help container">
+  <view class="help-title">{{datas.articleTitle}}</view>
+  <view style="width: 100%;"><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>
+</view>

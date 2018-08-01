@@ -1,0 +1,42 @@
+<!--pages/expensecalendar/expensecalendar.wxml-->
+<view class="exp container">
+	<view class="exp-top">
+		<view class="exp-top-left">
+			<view>卡号：{{ucardNo}}</view>
+			<view>余额：￥{{ucardScore}}</view>
+		</view>
+		<view class="exp-top-right">{{ucardType == 1 ? '储值卡' : '活动卡'}}</view>
+	</view>
+	<view class="exp-center">
+		<view class="exp-ce-item exp-ce-left">
+			<view>总额度</view>
+			<view>{{datas.into}}</view>
+		</view>
+		<view class="exp-ce-item exp-ce-right">
+			<view>总支出</view>
+			<view>{{datas.out}}</view>
+		</view>
+	</view>
+	<view class="exp-bottom">
+		<!-- 第一条 -->
+		<view class="exp-b1" wx:for="{{datas.root}}" wx:key="{{index}}">
+			<view class="exp-b1-item">
+				<!-- <view>周二</view> -->
+				<view>{{item.createTime}}</view>
+			</view>
+			<view class="exp-b1-item epx-b1-item1">
+				<view>
+					<view class="{{item.moneyType == 1 ? 'exp-b1-yuan' : 'exp-b1-yuan1'}}"></view>
+					{{item.moneyType == 1 ? '收入' : '支出'}}
+				</view>
+				<view class="exp-b-left">余额</view>
+			</view>
+			<view class="exp-b1-item">
+				<view>￥{{item.money}}</view>
+				<view>￥{{item.balance}}</view>
+			</view>
+		</view>
+		<!-- 没有数据时 -->
+		<view class="exp-b2" wx:if="{{!datas.root}}" >暂时没有消费记录</view>
+	</view>
+</view>

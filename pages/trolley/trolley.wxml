@@ -1,0 +1,51 @@
+<view class="container test-container" bindtap="test">
+  <view wx:if="{{lists.length == 0}}" class="nodata f28 gray02">购物车中暂无商品</view>
+  <view class="main">
+    <view class="pro-item" catchlongpress="handleShowControl" wx:for="{{lists}}" wx:key="index" data-index="{{index}}">
+      <view class="item-content">
+        <view class="checkbox" data-index="{{index}}" bindtap="handleCheckout">
+          <icon color="#999999" class="weui-icon-checkbox_circle" type="circle" size="30" wx:if="{{!item.checked}}"></icon>
+          <icon color="#e8380d" class="weui-icon-checkbox_success" type="success" size="30" wx:if="{{item.checked}}"></icon>
+        </view>
+        <view class="thumbnail">
+          <image src="{{baseUrl}}{{item.goodsThums}}" style="width:190rpx; height: 190rpx;" mode="aspectFill"></image>
+        </view>
+        <view class="info" bindtap="handleNavigateToDetail" id="{{index}}">
+          <view class="f28 gray01">{{item.goodsName}}</view>
+          <view class="f24 gray04 price">
+            <view>规格:
+              <text class="gray01"> {{item.attrVal}}</text>
+            </view>
+            <!-- <view>尺码:
+              <text class="gray01"> abc</text>
+            </view> -->
+          </view>
+          <view class="f24 gray04">
+            <!-- 原价:
+            <text class="gray06 f28 though">￥abc</text> -->
+            价格:
+            <text class="red-color f28">￥{{item.attrPrice}}</text>
+          </view>
+        </view>
+        <view class="f28 num">x{{item.total}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="placeholder-box120"></view>
+  <view class="placeholder-box100"></view>
+  <!-- 底部 -->
+  <view class="footer">
+    <view bindtap="handleDelChoosed">
+      <image src="../../assets/add-dz2.png" style="width: 30rpx;height: 35rpx;"></image>
+      <view class="f24 text-center gray05">删除</view>
+    </view>
+    <view class="f24">总计：
+      <text class="red-color f28"> ￥{{totalPrice}} </text>
+    </view>
+    <view>
+      <view class="f28 main-bg main-bgi" bindtap="handleGoSettlement">
+        去结算
+      </view>
+    </view>
+  </view>
+</view>

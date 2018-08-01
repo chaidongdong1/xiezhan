@@ -1,0 +1,44 @@
+<!--pages/package/package.wxml-->
+<view class="card container">
+  <!-- 头部 -->
+  <view class="card-top">
+    <view bindtap="bindtapChuz" class="card-top-item {{cursorIdex == 1 ? 'inque-top-active' : ''}}">储值卡</view>
+    <view bindtap="bindtapHuod"  class=" card-top-item {{cursorIdex == 0 ? 'inque-top-active' : ''}}">活动卡</view>
+  </view>
+  <!-- 我的卡包 -->
+  <view class="mycard">
+    <!-- 第一个 -->
+    <view class="mcard-one" wx:for="{{datas.root}}" wx:key="{{index}}">
+      <view class="mcard-bj">
+        <image src="../../assets/kbglbj.png" mode="widthFix"></image>
+      </view>
+      <view class="mcard-nr">
+        <view class="mcard-kh">{{item.cardName}}</view>
+        <!-- 卡片信息 -->
+        <view class="mcard-bottom">
+          <view class="mcard-b-left mcard-bottom-item">
+            <view class="mcard-kplx">卡片折扣
+              <text class="mcard-kplx-r" style="font-size: 36rpx;">{{item.cardDiscount*1/10}}折</text>
+            </view>
+            <view class="mcard-kplx">卡片金额
+              <text class="mcard-kplx-r" style="font-size: 36rpx;">￥{{item.cardMoney}}</text>
+            </view>
+            <view class="mcard-kplx">卡片类型
+              <text class="mcard-kplx-r">{{item.cardType == 1 ? '储值卡' : '活动卡'}}</text>
+            </view>
+          </view>
+          <view class="mcard-b-right mcard-bottom-item">
+            <image src="../../assets/kbgl.png" mode="widthFix"></image>
+            <navigator class="mcard-b-cz" url="../cardbuy/cardbuy?cardId={{item.cardId}}">
+              <text>+</text>
+              <text style="font-size: 30rpx;" data-cardid="{{item.cardId}}">点击购买</text>
+            </navigator>
+          </view>
+        </view>
+        <!-- 说明 -->
+        <view class="macrd-shuom" wx:if="{{item.cardType == 2 ? true : flase}}">活动时间：{{item.startTime}} 至 {{item.endTime}}</view>
+        <view class="macrd-shuom">活动卡用完卡片作废 储值卡可充值使用</view>
+      </view>
+    </view>
+  </view>
+</view>

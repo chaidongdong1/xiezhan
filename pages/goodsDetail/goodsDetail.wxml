@@ -1,0 +1,89 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="container">
+  <image src="{{baseUrl}}{{detail.goodsImg}}" style="width:100%; height: 860rpx;" mode="aspectFill"></image>
+  <view class="infos">
+    <view class="title f28 gray01">{{detail.goodsName}}</view>
+    <!-- <view class="double-column">
+      <view class="f24 gray02">新旧程度:
+        <text class="gray04">{{detail.saleTime}}</text>
+      </view>
+    </view> -->
+    <view class="double-column">
+      <!-- <view class="f24 gray02">原价:
+        <text class="gray04">￥{{detail.marketPrice}}</text>
+      </view> -->
+      <view class="f24 gray02">价格:
+        <text class="red-color f28">￥{{detail.shopPrice}}</text>
+      </view>
+    </view>
+    <!-- <view class="double-column">
+      <view class="f24 gray02">颜色:
+        <text class="gray04">{{detail.goodsSpec}}</text>
+      </view>
+      <view class="f24 gray02">尺码:
+        <text class="gray04">{{detail.goodsUnit}}</text>
+      </view>
+    </view> -->
+  </view>
+  <view class="details">
+    <view class="d-title">
+      <text class="f32">商品详情</text>
+    </view>
+    <view class="f24 gray04 desc">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+  <!-- <view class="recommend">
+    <view class="d-title">
+      <image src="../../assets/goods_lsit.png" style="width:36rpx;height: 36rpx;position: relative;top:6rpx;"></image>
+      <text class="f32">推荐商品</text>
+    </view>
+  </view> -->
+  <!-- pro list -->
+  <!-- <lists lists="{{lists}}" loadingStatus="{{loadingStatus}}"></lists> -->
+  <!-- 底线 -->
+  <!-- <view class="public-footer">
+        <text></text>别扯了，到底了
+        <text></text>
+      </view> -->
+  <view class="placeholder-box120"></view>
+  <!-- footer -->
+  <view class="footer">
+    <view class="now-buy f28 main-bg" bindtap="handleBuy">立即购买</view>
+    <view class="add-trolley f28 main-bg main-bgi" bindtap="handleAddToTrolley">加入购物车</view>
+  </view>
+  <navigator url="../trolley/trolley">
+    <view class="arc-btn-lg trolley">
+      <image src="../../assets/mall_02.png" style="width: 58rpx;height: 58rpx"></image>
+      <view class="corner" wx:if="{{totalTrolleyLen!=0}}">{{totalTrolleyLen}}</view>
+    </view>
+  </navigator>
+  <block wx:if="{{flag==='car' || flag==='buy'}}">
+    <view class="mask" bindtap="handleHidePop"></view>
+    <view class="pop">
+      <view class="top">
+        <scroll-view scroll-y class="scroll-container">
+          <view class="scroll-wapper">
+            <view class="title f28 gray01">{{detail.goodsName}}</view>
+            <view class="choosed-box f24 gray04">已选：“规格：{{chooseSpecifications.attrVal}}； 数量：{{chooseNum}}； 价格：{{chooseSpecifications.attrPrice*chooseNum}}元”</view>
+            <view class="specifications">
+              <view class="f24 gray04 txt">选择规格：</view>
+              <view class="specifications-box">
+                <view wx:for="{{detail.priceAttrs}}" wx:key="{{index}}" class="{{index == chooseSpecificationsIndex ? 'active' : ''}}" bindtap="handleChooseSpecifications" data-index="{{index}}">{{item.attrVal}}</view>
+              </view>
+              <view class="f24 gray04 txt">选择数量：</view>
+              <view class="choosed-num">
+                <view class="raduce" bindtap="handleRaduceOrPlus" data-flag="raduce">-</view>
+                <view class="num f28 gray01">{{chooseNum}}</view>
+                <view class="plus" bindtap="handleRaduceOrPlus" data-flag="plus">+</view>
+                <view class="stock gray04 f28">库存：{{chooseSpecifications.attrStock}}</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="bottom" bindtap="handleCarOrBuy">{{flag==='car'?'加入购物车':'立即购买'}}</view>
+    </view>
+  </block>
+</view>

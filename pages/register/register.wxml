@@ -1,0 +1,40 @@
+<!--pages/register/register.wxml-->
+<!-- 授权按钮 -->
+<view class="container" wx:if="{{showModal}}">
+  <view class="content">
+    <view class="title">
+      <view class="h1">温馨提示</view>
+      <view class="h2">{{mallName.mallName}}申请获取以下权限</view>
+      <view class="h3">
+        <text></text>获取你的公开信息（昵称、头像）</view>
+    </view>
+    <button class="btnaa" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">开始授权</button>
+  </view>
+</view>
+<view class="register">
+	<!-- 背景图 -->
+	<view class="regis-bj">
+		<image src="{{baseUrl}}{{welcomPic}}"></image>
+	</view>
+	<!-- 内容 -->
+	<view class="regis-nr">
+		<!-- logo -->
+		<view class="regis-logo">
+			<image src="{{baseUrl}}{{logo}}" mode="widthFix"></image>
+		</view>
+		<!-- 文字 -->
+		<view class="regis-text">
+			<text>{{mallTitle}}</text>
+			<view class="regis-te-nr">{{mallDesc}}</view>
+		</view>
+		<!-- 按钮 -->
+		<view class="regis-button">
+			<view bindtap="bindtapXia" class="regis-bt1">
+				<view>立即下单</view>
+			</view>
+			<view class="regis-bt2" bindtap="goindex">
+				<view>进入商城</view>
+			</view>
+		</view>
+	</view>
+</view>

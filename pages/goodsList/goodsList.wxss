@@ -1,0 +1,13 @@
+/* pages/goodsList/goodsList.wxss */
+@import '../../styles/public.wxss';
+.trolley {
+  position: fixed;
+  bottom: 15rpx;
+  right: 15rpx;
+  overflow: inherit;
+}
+
+.arc-btn-lg {
+	background-image: none;
+	background-color: #C28535;
+}

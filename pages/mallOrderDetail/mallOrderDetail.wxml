@@ -1,0 +1,83 @@
+<!--pages/mallOrderDetail/mallOrderDetail.wxml-->
+<view class="page-wapper">
+  <view class="shou">
+    <view class="shou-image">
+      <image src="../../assets/yuyue3.png" mode="widthFix"></image>
+    </view>
+    <view class="shou-wz">
+      <view>
+        <text class="shou-text">姓名：{{detail.userName}}</text>
+        <text>电话：{{detail.userPhone}}</text>
+      </view>
+      <view>
+        <text>地址：{{detail.userAddress}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="order-list-main">
+    <view class="order-list-goods" wx:for="{{detail.goodsList}}" wx:for-index="j" wx:for-item="sub" wx:key="{{j}}" data-goodsid="{{sub.goodsId}}" bindtap="handleGoGoodsDetail">
+      <view class="lside">
+        <image src="{{baseUrl}}{{sub.goodsThums}}" mode="aspectFill"></image>
+      </view>
+      <view class="rside">
+        <view class="gray02 f28">{{sub.goodsName}}</view>
+        <view class="f24 gray05">规格：{{sub.goodsAttrName}}</view>
+        <view class="f24 gray05">价格：
+          <text class="f32 red-color">￥{{sub.goodsPrice}}</text>
+        </view>
+      </view>
+      <view class="f32 gray05">
+        x{{sub.goodsNums}}
+      </view>
+    </view>
+  </view>
+  <view class="f28 gray03 goods-info">
+    <view class="gray03">订单号：</view>
+    <view class="gray05">{{detail.orderNo}}</view>
+  </view>
+  <view class="f28 gray03 goods-info">
+    <view>下单时间：</view>
+    <view class="gray05">{{detail.createTime}}</view>
+  </view>
+  <view class="f28 gray03 goods-info">
+    <view>订单备注：</view>
+    <view class="gray05">{{detail.orderRemarks}}</view>
+  </view>
+  <view class="f28 gray03 goods-info">
+    <view>订单金额：</view>
+    <view>
+      <text class="f32 red-color">￥{{detail.totalMoney}}</text>
+    </view>
+  </view>
+  <!-- 快递信息 -->
+  <view class="kd" wx:if="{{!detail.deliverNo || detail.deliverNo == '' ? false : true }}">
+    <view class="inde-one">快递单号：{{detail.deliverNo}}</view>
+    <view class="inde-one">快递商家：{{detail.deliverType}}</view>
+    <view class="inde-one">发出时间：{{detail.deliveryTime}}</view>
+    <view class="inde-one" style="padding-bottom: 50rpx;">快递价格：{{detail.deliverMoney}}</view>
+    <button bindtap="bindtapChakan">查看快递信息</button>
+    <!-- 中间的快递信息 -->
+    <view class="inde-kd" wx:for="{{chakan}}" wx:key="{{index}}">
+      <view class="inde-kd-left">
+        <view>{{item.time}}</view>
+      </view>
+      <!-- 正常 -->
+      <view class="inde-kd-center" wx:if="{{index == chakan.length - 1 || index == 0 ? false : true}}">
+        <view class="index-kd-ceyuan"></view>
+      </view>
+      <!-- 揽收 -->
+      <view class="inde-kd-center zuihou" wx:if="{{index == chakan.length - 1 ? true : false}}">
+        <image src="../../assets/lanshou.png" style="width:35rpx;height: 35rpx;"></image>
+      </view>
+      <!-- 签收 -->
+      <view class="inde-kd-center chushi" wx:if="{{chakanz == 4 && index == 0 ? true : false }}">
+        <image src="../../assets/shouhuo.png" style="width:35rpx;height: 35rpx;" mode="widthFix"></image>
+      </view>
+      <view class="inde-kd-right">
+        <view class="inde-kd-r-wz">{{item.context}}</view>
+      </view>
+      <!-- 没有快递信息时 -->
+      <view class="kd-zw" wx:if="{{chakan == 0 ? true : false }}">当前暂无快递信息</view>
+    </view>
+  </view>
+</view>

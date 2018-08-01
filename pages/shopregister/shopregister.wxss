@@ -1,0 +1,60 @@
+/* pages/shopregister/shopregister.wxss */
+.sh{
+	width: 100%;
+	height: 100vh;
+	overflow-x: hidden;
+	position: relative;
+}
+.shop-img{
+	width: 100%;
+	height: auto;
+}
+.shop-img image{
+	width: 100%;
+	height: 100%;
+}
+.shop{
+	width: 94%;
+	height: auto;
+	margin-top: 50rpx;
+	margin: 50rpx 3% 50rpx 3%; 
+}
+.shop-name{
+	width: 100%;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
+	color: #333;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 30rpx;
+}
+.shop-name input{
+	width: 100%;
+	border:0;
+	padding: 0 20rpx;
+}
+.shop-btn{
+	width: 100%;
+	height: auto;
+	margin-top: 100rpx;
+}
+.shop-btn button{
+	width: 100%;
+	font-size: 34rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background: #e89300;
+	color: #fff;
+	border-radius: 15rpx;
+	border:0;
+}
+.shop-bottom{
+	width: 100%;
+	height: auto;
+	font-size: 26rpx;
+	color: #666;
+	text-align: center;
+	position: absolute;
+	bottom: 30rpx;
+}

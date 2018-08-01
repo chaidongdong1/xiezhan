@@ -1,0 +1,29 @@
+/* pages/recommend/recommend.wxss */
+.zd{
+	width: 100%;
+	height: auto;
+	margin-top: 20rpx;
+}
+.zd-top{
+	width: 100%;
+	height: 40rpx;
+	line-height: 40rpx;
+	display: flex;
+	font-size: 30rpx;
+	color: #333;
+	text-align: center;
+	margin: 15rpx;
+}
+.zd-top view{
+	flex: 1;
+}
+.back{
+	background: #d9d9d9;
+	padding: 20rpx;
+	border-radius: 10rpx;
+}
+
+.f32 {
+	font-size: 32rpx;
+	color: #666;
+}

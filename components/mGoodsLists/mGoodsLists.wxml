@@ -1,0 +1,59 @@
+<!--components/mGoodsLists/mGoodsLists.wxml-->
+<view class="pro-list-box">
+  <view>
+    <!-- 列表 -->
+    <block wx:for="{{lists}}" wx:if="{{index%2 == 0}}" wx:key="{{index}}">
+      <navigator url="../goodsDetail/goodsDetail?id={{item.goodsId}}" hover-class="none">
+        <view class="pro-item">
+          <image src="{{baseUrl}}{{item.goodsThums}}" mode="aspectFill"></image>
+          <view class="info">
+            <view class="f24 gray04 pro-title">{{item.goodsName}}</view>
+            <!-- <view class="f24 gray05">尺码：
+              <text class="gray04">{{item.goodsUnit}}</text> 颜色：
+              <text class="gray04">{{item.goodsSpec}}</text>
+            </view> -->
+            <view class="f24 gray05"> 价格
+              <text class="f32 red-color">￥{{item.shopPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view>
+    <!-- 列表 -->
+    <block wx:for="{{lists}}" wx:if="{{index%2 == 1}}" wx:key="{{index}}">
+      <navigator url="../goodsDetail/goodsDetail?id={{item.goodsId}}" hover-class="none">
+        <view class="pro-item">
+          <image src="{{baseUrl}}{{item.goodsThums}}" mode="aspectFill"></image>
+          <view class="info">
+            <view class="f24 gray04 pro-title">{{item.goodsName}}</view>
+            <!-- <view class="f24 gray05">尺码：
+              <text class="gray04">{{item.goodsUnit}}</text> 颜色：
+              <text class="gray04">{{item.goodsSpec}}</text>
+            </view> -->
+            <view class="f24 gray05"> 价格
+              <text class="f32 red-color">￥{{item.shopPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>
+<!-- 底部 -->
+<block wx:if="{{loadingStatus == 1}}">
+  <view class="container">
+    <view class="public-footer">
+      <text></text>别扯了 到底了
+      <text></text>
+    </view>
+  </view>
+</block>
+<!-- 加载完成 未获取到数据 -->
+<block wx:if="{{loadingStatus == 2}}">
+  <view class="container goods-null">
+    <image src="../../assets/loading_icon.png" style="width:170rpx;height:144rpx;"></image>
+    <text class="f24 gray05">暂无商品</text>
+  </view>
+</block>

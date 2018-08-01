@@ -1,0 +1,52 @@
+<!--pages/inquire/inquire.wxml-->
+<view class="inque container">
+  <!-- top -->
+  <view class="inque-top">
+    <view bindtap="inque" class="inque-top-item  {{curIdex == 0 ? 'inque-top-active' : ''}}">未付款</view>
+    <view bindtap="inque1" class="inque-top-item {{curIdex == 1 ? 'inque-top-active' : ''}}">维护中</view>
+    <view bindtap="inque2" class="inque-top-item {{curIdex == 2 ? 'inque-top-active' : ''}}">已完成</view>
+  </view>
+  <!-- 列表 -->
+  <view class="inque-liebiao">
+    <!-- 第一个 -->
+    <view  class="inque-bottom" wx:for="{{datas}}" wx:key="{{index}}">
+      <navigator class="inque-b-one" url="../inquiredetails/inquiredetails?orderId={{item.orderId}}">
+        <!-- 未付款图标 -->
+        <view wx:if="{{item.isPay == 0 ? true : false}}" class="inque-b-wc">
+          <image src="../../assets/wwc.png" mode="widthFix"></image>
+        </view>
+        <!-- 维护中图标 -->
+        <view wx:if="{{item.isPay == 1 && item.status != 4 ? true : false}}" class="inque-b-wc">
+          <image src="../../assets/whz.png" mode="widthFix"></image>
+        </view>
+        <!-- 已完成图标 -->
+        <view wx:if="{{item.status == 4 && item.isPay == 1  ? true : false}}" class="inque-b-wc">
+          <image src="../../assets/ywc.png" mode="widthFix"></image>
+        </view>
+        <!-- 产品图 -->
+        <!-- <view class="inque-one-left">
+          <image src="{{baseUrl}}{{item.catThumbs}}" mode="widthFix"></image>
+        </view> -->
+        <view class="inque-one-right">
+          <view>订单编号：{{item.orderNo}}</view>
+          <!-- <view>品牌：{{item.catName}} {{item.brand}}</view> -->
+          <view>订单状态：<text>{{item.orderStatus}}</text></view>
+          <view>订单原因：{{item.reason}}</view>
+          <view wx:if="{{item.status == 0 ? true : false }}">预约时间:{{item.receiveTime}}</view>
+          <view wx:if="{{item.status != 0 ? true : false }}">送件时间:{{!item.completeTime || item.completeTime == 0000-00-00 ? '暂无' : item.completeTime}}</view>
+        </view>
+      </navigator>
+      <!-- 按钮 -->
+      <view class="inque-b-anniu">
+        <navigator class="inque-b-anniu2" url="../inquiredetails/inquiredetails?orderId={{item.orderId}}">查看详情</navigator>
+        <view wx:if="{{item.status == 0 ? true : false }}" data-orderid="{{item.orderId}}" data-status="{{item.status}}" bindtap="bindtapFukuan" class="inque-b-anniu1 {{item.status == 0 ? 'inque-cc' : 'inque-bb'}}">等待接单</view>
+        <view wx:if="{{item.isPay == 0 && item.status != 0 && item.isMoney == 1 ? true : false }}" data-orderid="{{item.orderId}}" data-status="{{item.status}}" bindtap="bindtapFukuan" class="inque-b-anniu3">立即付款</view>
+        <view wx:if="{{item.status == 3 && item.isPay == 1 ? true : false }}" bindtap="bindtapShou" class="inque-b-anniu3" data-orderid="{{item.orderId}}">确认收货</view>
+        <view wx:if="{{item.status == 4 && item.isPay == 1 ? true : false }}" class="inque-b-anniu3" data-orderid="{{item.orderId}}" catchtap="handleDelDingdan">删除订单</view>
+      </view>
+    </view>
+    <navigator wx:if="{{!datas || datas.length == 0}}" url="../booking/booking" class="in-my">
+      <view>当前页面没有订单，点击立即下单</view>
+    </navigator>
+  </view>
+</view>

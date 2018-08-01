@@ -1,0 +1,111 @@
+/* pages/expensecalendar/expensecalendar.wxss */
+.exp{
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+.exp-top{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	background: #BC924E;
+	border-radius: 15rpx;
+}
+.exp-top-left{
+	font-size: 30rpx;
+	color: #fff;
+	line-height: 48rpx;
+	padding: 20rpx;
+}
+.exp-top-right{
+	font-size: 32rpx;
+	color: #fff;
+	margin-top:40rpx;
+	margin-right: 30rpx;
+}
+.exp-center{
+	width: 100%;
+	height: auto;
+	background: #ccc;
+	margin-top: 20px;
+	display: flex;
+	border-radius: 15rpx;
+}
+.exp-ce-item{
+	flex: 1;
+}
+.exp-ce-left{
+	margin:  10px;
+	border-right: 1px solid #fff;
+	font-size: 26rpx;
+	color: #333;
+	line-height: 46rpx;
+}
+.exp-ce-left view:last-child{
+	font-size: 34rpx;
+	color: #fa5100;
+	padding-top: 10rpx;
+}
+.exp-ce-right{
+	margin:  10px;
+	font-size: 26rpx;
+	color: #333;
+	line-height: 46rpx;
+	padding-left: 30rpx;
+}
+.exp-ce-right view:last-child{
+	font-size: 34rpx;
+	color: #fa5100;
+	padding-top: 10rpx;
+}
+.exp-bottom{
+	width: 100%;
+	height: auto;
+	margin: 50rpx 30rpx 0 30rpx;
+}
+.exp-b1{
+	width: 100%;
+	height:auto;
+	display: flex;
+	font-size: 28rpx;
+	color: #333;
+	line-height: 48rpx;
+	border-bottom: 1px dashed #866f63;
+	padding-bottom: 25rpx;
+	margin-bottom: 20rpx;
+}
+.exp-b1-item{
+	flex: 1;
+}
+.exp-b1-yuan{
+	width: 15rpx;
+	height: 15rpx;
+	border-radius: 50%;
+	margin-right: 10rpx;
+	background: #08c61e;
+	display: inline-block;
+}
+.exp-b1-item1 view{
+	padding-left: 25rpx;
+}
+.exp-b1-item1 view:first-child{
+	padding-left: 0;
+}
+.exp-b1-yuan1{
+	width: 15rpx;
+	height: 15rpx;
+	border-radius: 50%;
+	margin-right: 10rpx;
+	background: #fa5100;
+	display: inline-block;
+}
+.exp-b-left{
+	padding-left: 20rpx;
+}
+.exp-b2{
+	font-size: 30rpx;
+	color: #333;
+	margin: 50rpx 0;
+	text-align: center;
+}

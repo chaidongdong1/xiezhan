@@ -1,0 +1,111 @@
+<!--index.wxml-->
+<!-- banner -->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="banner">
+  <swiper style="width: 100%;height: 100%;" indicator-dots="{{indicator}}" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#B97D1C" autoplay="{{autoplay}}" interval="4000" duration="400" circular="{{circular}}">
+    <swiper-item wx:for="{{images}}" wx:key="{{index}}">
+      <view class="banner-a1">
+        <image style="width: 100%; height: 100%;" src="{{baseUrl}}{{item.adFile}}" mode="widthFix"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- nav -->
+<view class="nav">
+  <view class="nav-item" bindtap="bindtapBang">
+    <image src="../../assets/yyxd.png" mode="widthFix"></image>
+    <view style="font-size: 26rpx; color: #333;">预约下单</view>
+  </view>
+  <view class="nav-item" bindtap="bindtapKp">
+    <image src="../../assets/kpzx.png" mode="widthFix"></image>
+    <view style="font-size: 26rpx; color: #333;">购买卡片</view>
+  </view>
+  <view class="nav-item" bindtap="bindtapYou">
+    <image src="../../assets/yhhd.png" mode="widthFix"></image>
+    <view style="font-size: 26rpx; color: #333;">优惠中心</view>
+  </view>
+  <navigator class="nav-item" url="../pricedetail/pricedetail">
+    <image src="../../assets/jiage.png" mode="widthFix"></image>
+    <view style="font-size: 26rpx; color: #333;">价格明细</view>
+  </navigator>
+</view>
+<view class="container">
+  <!-- 服务介绍 -->
+  <view class="fuwu">
+    <!-- 标题 -->
+    <view class="fw-bt">
+      <text>Service Introduction</text>
+      <view class="fw-zw">
+        <view class="fw-hxz"></view>服务介绍
+        <view class="fw-hxy"></view>
+      </view>
+    </view>
+    <!-- 内容 -->
+    <view class="fw-nr">
+      <swiper style="width: 100%;height: 100%;" autoplay="{{autoplay}}" interval="3000" duration="300" circular="{{circular}}">
+        <swiper-item wx:for="{{fuwu}}" wx:if="{{index%5==0}}" wx:key="{{index}}">
+          <view class="fw-nr1">
+            <navigator wx:for="{{fuwu}}" wx:for-item="j" wx:for-index="i" wx:key="{{index}}" wx:if="{{i>=index&&i<index+5}}" url="../indexdetails/indexdetails?articleId={{j.articleId}}"  class="{{index+4==i ? 'fw-nr-item1' : 'fw-nr-item'}}">
+              <view class="fw-nr-wz">{{j.articleTitle}}</view>
+              <image src="{{baseUrl}}{{j.articleImg}}" mode="widthFix"></image>
+            </navigator>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <!-- 优惠活动广告图 -->
+  <view class="yhhd">
+    <navigator url="../preferential/preferential" wx:for="{{datas}}" wx:key="{{index}}">
+      <image class="yhhd-img" mode="widthFix" src="{{baseUrl}}{{item.adFile}}"></image>
+    </navigator>
+  </view>
+  <!-- 企业文化 -->
+  <view class="wh">
+    <!-- 标题 -->
+    <view class="fw-bt">
+      <text>Corporate Culture</text>
+      <view class="fw-zw">
+        <view class="fw-hxz"></view>企业文化
+        <view class="fw-hxy"></view>
+      </view>
+    </view>
+    <!-- 内容 -->
+    <view class="wh-wz1">
+      <view class="wh-wz2">{{qiye.articleTitle}}</view>
+      <view class="wh-wz3">{{qiye.articleKey}}</view>
+      <view class="wh-wz4">
+        <!-- {{qiye.articleContent}} -->
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+      <view class="wh-wz-left">
+        <image src="../../assets/wh-left.png"></image>
+      </view>
+      <view class="wh-wz-right">
+        <image src="../../assets/wh-right.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 服务品牌 -->
+<view class="pinpai">
+  <!-- 标题 -->
+  <view class="fw-bt">
+    <text>Service brand</text>
+    <view class="fw-zw">
+      <view class="fw-hxz"></view>服务品牌
+      <view class="fw-hxy"></view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="pinpai-nr">
+    <!-- 背景图 -->
+    <view class="pp-back">
+      <image src="../../assets/fupp.jpg"></image>
+    </view>
+    <!-- 图标 -->
+    <view class="pp-top">
+      <image src="../../assets/pinpai.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/message/message.wxml-->
+<view class="mess container">
+  <view class="mess-one" wx:for="{{datas}}" wx:key="{{index}}">
+    <view class="{{item.msgStatus == 0 ? 'mess-one-wd' : 'mess-one-yd' }}"></view>
+    <view class="mess-one1">
+      <text style="font-size: 30rpx; color: #BC924E;">{{item.msgType}}</text>
+      <text>{{item.createTime}}</text>
+    </view>
+    <view class="mess-one2">{{item.msgContent}}</view>
+  </view>
+  <!-- 没有数据时 -->
+  <view style="font-size: 30rpx; color: #BC924E; text-align: center; margin-top: 30rpx;" wx:if="{{!datas || datas.length == 0}}">暂无消息</view>
+</view>

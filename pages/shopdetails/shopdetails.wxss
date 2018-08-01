@@ -1,0 +1,281 @@
+/* pages/shopdetails/shopdetails.wxss */
+
+.lists {
+  width: 100%;
+  height: auto;
+}
+
+.lists-one {
+  width: 100%;
+  height: auto;
+  margin: 30rpx 0;
+}
+
+.lists-one-aa {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lists-one>.lists-one1 {
+  font-size: 36rpx;
+  color: #B97D1C;
+  margin: 30rpx 0 15rpx 0;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #999;
+}
+
+.lists-one view {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 48rpx;
+  margin-top: 10rpx;
+  padding-bottom: 5rpx;
+  padding-left: 15rpx;
+}
+
+.lists-in {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.lists-input {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lists-input text {
+  width: 150rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.lists-input input {
+  width: 250rpx;
+  font-size: 28rpx;
+  color: #333;
+  background: #fff;
+  border-radius: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 15rpx;
+  margin-bottom: 15rpx;
+  border: 1px solid #ccc;
+}
+
+.lists-gj {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lists-gj text {
+  font-size: 34rpx;
+  line-height: 60rpx;
+  color: #B97D1C;
+}
+
+.lists-button {
+  width: 100%;
+  height: auto;
+  margin: 50rpx 0;
+}
+
+.lists-button button {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #e89300;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.lists-sc {
+  width: 100%;
+  height: auto;
+}
+
+.lists-wz {
+  font-size: 36rpx;
+  color: #B97D1C;
+  margin-bottom: 15rpx;
+  border-bottom: 1px solid #999;
+  padding-bottom: 15rpx;
+}
+
+.lists-img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lists-item {
+  width: 33.33333%;
+  padding: 10rpx;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.lists-item image {
+  width: 100%;
+  height: 240rpx;
+}
+
+
+/*商品信息*/
+
+.lists-two {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30rpx;
+}
+
+.lists-two-title {
+  font-size: 36rpx;
+  color: #B97D1C;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #999;
+}
+
+.section {
+  width: 100%;
+  height: auto;
+  margin: 30rpx 0;
+  border-bottom: 1px dashed #E89300;
+}
+
+.lists-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.pick {
+  width: 75%;
+  background: #fff;
+  border-radius: 15rpx;
+  padding: 10rpx 20rpx;
+  border: 1px solid #ccc;
+  height: 65rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.picker {
+  width: 100%;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.lists-tj {
+  width: 200rpx;
+  height: 65rpx;
+  margin-bottom: 2%;
+  margin-top: 15rpx;
+}
+
+.lists-tj view {
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #B97D1C;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 65rpx;
+}
+
+.lists-tj1 {
+  width: 23%;
+  height: 63rpx;
+  margin-left: 2%;
+}
+
+.lists-tj1 view {
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #E89300;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 63rpx;
+  box-shadow: 0 0 10rpx #ccc;
+}
+
+.lists-fw {
+  width: 90%;
+  height: 65rpx;
+  margin-left: 10%;
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.lists-fw-item {
+  flex: 1;
+  height: 65rpx;
+  margin-right: 15rpx;
+  background-color: #fff;
+  font-size: 28rpx;
+  color: #333;
+  border: 1px solid #ddd;
+  line-height: 65rpx;
+  padding: 0 15rpx;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+}
+
+.lists-fw view {
+  width: 160rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  text-align: center;
+  border-radius: 15rpx;
+  background-color: #ddd;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.lists-fw-jg {
+  width: 100%;
+  height: 65rpx;
+  line-height: 65rpx;
+  display: flex;
+  margin: 20rpx 0 30rpx 0;
+  justify-content: space-between;
+}
+
+.lists-fw-jg-wz {
+  font-size: 30rpx;
+  color: #E89300;
+  margin-left: 130rpx;
+}
+
+.lists-fw-jg-item {
+  width: 160rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  text-align: center;
+  border-radius: 15rpx;
+  background-color: #E89300;
+  color: #fff;
+  box-shadow: 0 0 10rpx #ccc;
+  font-size: 28rpx;
+}
+
+.lists-fw-jg-item1 {
+  width: 160rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  text-align: center;
+  border-radius: 15rpx;
+  background-color: #C0A366;
+  color: #fff;
+  font-size: 28rpx;
+}

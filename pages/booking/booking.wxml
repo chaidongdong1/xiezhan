@@ -1,0 +1,81 @@
+<!--pages/booking/booking.wxml-->
+<view class="yyxd container">
+  <!-- 收货地址 -->
+  <navigator class="shou" url="../selectaddress/selectaddress">
+    <view class="shou-image">
+      <image src="../../assets/yuyue3.png" mode="widthFix"></image>
+    </view>
+    <view class="shou-wz" wx:if="{{address}}">
+      <view>
+        <text class="shou-text">姓名：{{address.userName}}</text>
+        <text>电话：{{address.userPhone}}</text>
+      </view>
+      <view>
+        <text>地址：{{address.address}}</text>
+      </view>
+    </view>
+    <view class="shou-wz" wx:if="{{!address}}">
+      <view style="line-height: 90rpx;">请选择地址</view>
+    </view>
+    <view class="show-tb">
+      <image style="width: 50rpx;height: 50rpx;" src="../../assets/gray_arrow.png" mode="widthFix"></image>
+    </view>
+  </navigator>
+  <!-- 预约日期 -->
+  <view class="yyxd-name yyxd-bottom">
+    <view class="yyxd-name-tb yyxd-name-item">
+      <image src="../../assets/yuyue4.png" mode="widthFix"></image>
+    </view>
+    <view class="yyxd-name-wz yyxd-name-item">预约日期:</view>
+    <view class="yyxd-name-input yyxd-name-item">
+      <picker mode="date" value="{{prefetchingTime}}" start="{{startTime}}" bindchange="handleDateChange">
+        <view class="picker">{{prefetchingTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <!-- 预约时间 -->
+  <view class="yyxd-name yyxd-bottom">
+    <view class="yyxd-name-tb yyxd-name-item">
+      <image src="../../assets/yuyue4.png" mode="widthFix"></image>
+    </view>
+    <view class="yyxd-name-wz yyxd-name-item">预约时间:</view>
+    <view class="yyxd-name-input yyxd-name-item">
+      <picker value="{{handlerIndex}}" range="{{handler}}" bindchange="handleDateChanges">
+        <view class="picker">{{handler[handlerIndex]}}</view>
+      </picker>
+    </view>
+  </view>
+  <!-- 原因 -->
+  <view class="yyxd-name yyxd-yy">
+    <view class="yyxd-name-tb yyxd-name-item">
+      <image src="../../assets/yuyue7.png" mode="widthFix"></image>
+    </view>
+    <view class="yyxd-name-wz yyxd-name-item">
+      <view>原</view>
+      <view>因:</view>
+    </view>
+    <view class="yyxd-name-input yyxd-name-item">
+      <picker bindchange="bindPickerChangeCause" value="{{causeindex}}" range="{{cause}}">
+        <view class="picker">{{cause[causeindex]}}</view>
+      </picker>
+    </view>
+  </view>
+  <!-- 备注 -->
+  <view class="yyxd-name" style="padding-top: 10px; height: auto;">
+    <view class="yyxd-name-tb yyxd-name-item">
+      <image src="../../assets/yuyue8.png" mode="widthFix"></image>
+    </view>
+    <view class="yyxd-name-wz yyxd-name-item">
+      <view>备</view>
+      <view>注:</view>
+    </view>
+    <view class="yyxd-name-input yyxd-name-item">
+      <textarea vlaue="" placeholder="请输入备注信息（不超过200字）" maxlength="200" placeholder-style="font-size:26rpx;color:#333;" adjust-position="true" bindinput="handleRecordBei"></textarea>
+    </view>
+  </view>
+  <!-- 提交 -->
+  <view class="yyxd-button" bindtap="bindtapTijiao">
+    <button>提交订单</button>
+  </view>
+  <view style="padding: 10rpx 0; font-size: 24rpx; color: #f00;">温馨提示：您所预约的时间和上门取件的时间可能有所偏差，如有怠慢请您谅解</view>
+</view>

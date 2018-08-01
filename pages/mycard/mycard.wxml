@@ -1,0 +1,72 @@
+<!--pages/mycard/mycard.wxml-->
+<view class="card container">
+  <!-- 我的卡包 -->
+  <view class="mycard">
+    <!-- 第一个 -->
+    <view class="mcard-one" wx:for="{{datas}}" wx:key="{{index}}">
+      <view class="mcard-bj">
+        <image src="../../assets/kbglbj.png" mode="widthFix"></image>
+      </view>
+      <view class="mcard-nr">
+        <view class="mcard-aa">
+          <view class="mcard-kh">会员卡号：{{item.ucardNo}}</view>
+          <view class="mcard-kh">{{item.ucardName}}</view>
+        </view>
+        <!-- 卡片信息 -->
+        <view class="mcard-bottom">
+          <view class="mcard-b-left mcard-bottom-item">
+            <view class="mcard-kplx">卡片类别
+              <text class="mcard-kplx-r">{{item.ucardType == 1 ? '储值卡' : '活动卡'}}</text>
+            </view>
+            <view class="mcard-kplx">卡片折扣
+              <text class="mcard-kplx-r" style="font-size: 40rpx;">{{item.ucardDiscount*1/10}}折</text>
+            </view>
+            <view class="mcard-kplx">可用额度
+              <text class="mcard-kplx-r" style="font-size: 40rpx;">￥{{item.ucardScore}}</text>
+            </view>
+            <view class="mcard-sj">开卡时间：{{item.createTime}}</view>
+          </view>
+          <view class="mcard-b-right mcard-bottom-item">
+            <image src="../../assets/kbgl.png" mode="widthFix"></image>
+            <view wx:if="{{item.ucardType == 1 ? true : false}}" class="mcard-b-cz" bindtap="showPopup" data-cz="{{item.ucardNo}}" data-lei="{{item.ucardType}}" data-yue="{{item.ucardScore}}" data-ucardId="{{item.ucardId}}">卡片充值</view>
+            <navigator class="mcard-b-cz" url="../expensecalendar/expensecalendar?ucardNo={{item.ucardNo}}&ucardId={{item.ucardId}}&ucardType={{item.ucardType}}&ucardScore={{item.ucardScore}}" style="background: #ccc; color: #333;">消费记录</navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 没有卡片 -->
+    <navigator class="mcard-one" url="../package/package" wx:if="{{!datas || datas.length == 0 && loading == 'true'}}">
+      <view class="mcard-bj" style="width: 40%;">
+        <image src="../../assets/kbglbj.png" mode="widthFix"></image>
+      </view>
+      <view class="mcard-nr">
+        <view class="mcard-aa">
+          <view class="mcard-kh">会员卡号：暂无</view>
+          <view class="mcard-kh"></view>
+        </view>
+        <!-- 卡片信息 -->
+        <view class="mcard-dd" style="margin: 80rpx 0; text-align: center;">点击购买卡片</view>
+      </view>
+    </navigator>
+  </view>
+  <!-- 弹窗 -->
+  <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+    <view class="img-wapper">
+      <view class="f11">卡片充值</view>
+      <view>会员卡号：{{chongzhi}}</view>
+      <view>卡片类别：{{leibie == 1 ? '储值卡' : '活动卡'}}</view>
+      <view>当前额度：
+        <text>￥{{edu}}</text>
+      </view>
+      <view class="f11-zhu">注：您正在进行充值操作，请确认您的充值信息。</view>
+    </view>
+    <view class="line"></view>
+    <view class="input-wapper b-color">
+      <input value="{{money}}" placeholder-style="color:#8fa4a2" type="number" bindinput="handleRecordMoeny" placeholder="输入充值金额" />
+    </view>
+    <view class="btn" bindtap="handleConfirm">确认充值</view>
+    <view class="close" bindtap="handleClosePopup">
+      <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+    </view>
+  </view>
+</view>

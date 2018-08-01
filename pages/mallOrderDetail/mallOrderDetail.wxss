@@ -1,0 +1,194 @@
+/* pages/mallOrderDetail/mallOrderDetail.wxss */
+@import '../../styles/public.wxss';
+page {
+	background-color: #fff;
+}
+.order-list-main {
+	border-bottom: 1px solid #f0f0f0;
+}
+.order-list-goods {
+	display: flex;
+	align-items: center;
+	padding: 5rpx 15rpx;
+}
+
+.order-list-goods .lside {
+	width: 190rpx;
+}
+
+.order-list-goods .lside image {
+	display: block;
+	width: 180rpx;
+	height: 180rpx;
+}
+
+.order-list-goods .rside {
+	flex: 1;
+	padding-left: 15rpx;
+}
+
+
+.shou {
+  width: 100%;
+  height: auto;
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  align-items: center;
+}
+
+.shou-image {
+  width: 8%;
+  height: auto;
+  padding-top: 15rpx;
+}
+
+.shou-image image {
+  width: 100%;
+  height: 100%;
+}
+
+.shou-wz {
+  flex: 1;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 46rpx;
+  margin-left: 20rpx;
+  padding: 10rpx 0 10rpx 20rpx;
+}
+
+.shou-wz view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shou-wz view text {
+  color: #BB9847;
+  text-align: justify;
+}
+
+.show-tb {
+  width: 50rpx;
+  margin-left: 25rpx;
+  margin-top: 30rpx;
+}
+
+.goods-info {
+	text-align: left;
+	padding: 10rpx 20rpx 0;
+	display: flex;
+}
+.goods-info view:first-child{
+  width: 150rpx;
+}
+.goods-info view:last-child {
+	flex: 1;
+	text-align: right;
+}
+
+.order-list-main {
+  padding-bottom: 15rpx;
+}
+
+/*快递信息*/
+.kd{
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-top: 7px solid #ddd;
+  padding-top: 20rpx;
+}
+.inde-one{
+  padding: 0 30rpx;
+  height: auto;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  margin-top: 5rpx;
+  color: #666;
+}
+.inde-kd{
+  padding: 0 30rpx;
+  height: 100rpx;
+  display: flex;
+  line-height: 40rpx;
+}
+.inde-kd-left{
+  width: 150rpx;
+  height: 100rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.inde-kd-center{
+  width: 20rpx;
+  height: 100rpx;
+  border-left: 2px solid #999;
+  margin-left: 15rpx;
+  position: relative;
+}
+.index-kd-ceyuan{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #999;
+  position: absolute;
+  top: 32rpx;
+  left: -10rpx;
+}
+.inde-kd-right{
+  flex: 1;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  color: #333;
+  height: 80rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+}
+.inde-kd-right1{
+  flex: 1;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  color: #333;
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+}
+.zuihou{
+  height: 40rpx;
+}
+.zuihou image{
+  position: absolute;
+  top: 30rpx;
+  left: -18rpx;
+}
+.chushi{
+  height: 80rpx;
+  margin-top: 30rpx;
+}
+.chushi image{
+  position: absolute;
+  top: 0;
+  left: -18rpx;
+}
+.kd button{
+  width: 250rpx;
+  height: 65rpx;
+  background: #BC924E;
+  color: #fff;
+  text-align: center;
+  line-height: 65rpx;
+  border-radius: 20rpx;
+  font-size: 28rpx;
+  position: absolute;
+  top: 150rpx;
+  right: 30rpx;
+}
+.kd-zw{
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  margin: 30rpx;
+}

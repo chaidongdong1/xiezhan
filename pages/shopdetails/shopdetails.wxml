@@ -1,0 +1,86 @@
+<!--pages/shopdetails/shopdetails.wxml-->
+<view class="lists container">
+  <!-- 订单信息 -->
+  <view class="lists-one">
+    <view class="lists-one1">订单信息</view>
+    <view class="lists-one-aa">
+      <text>姓名:{{datas.userName}}</text>
+      <text>电话:{{datas.userPhone}}</text>
+    </view>
+    <view>地址:{{datas.userAddress}}</view>
+    <view class="lists-one-aa">
+      <text>预约时间:{{datas.receiveTime}}</text>
+      <text>原因:{{datas.reason}}</text>
+    </view>
+    <view>备注：{{datas.orderRemarks}}</view>
+  </view>
+  <!-- 商品信息 -->
+  <view class="lists-two">
+    <view class="lists-two-title">商品信息录入</view>
+    <!-- 皮具1 -->
+    <view wx:if="{{totals == 0 ? true : false}}" class="lists-tj1" data-index="{{i}}" bindtap="bindtapAddLeather" style="margin: 30rpx 0;">
+      <view>添加皮具</view>
+    </view>
+    <view class="section" wx:for="{{totals}}" wx:for-index="i" wx:for-item="iitem" wx:key="{{i}}">
+      <view class="lists-section">
+        <picker class="pick" data-index="{{i}}" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex[i]}}" range="{{multiArray[i]}}">
+          <view class="picker">
+            {{multiArray[i][0][multiIndex[i][0]]}} / {{multiArray[i][1][multiIndex[i][1]]}} / {{multiArray[i][2][multiIndex[i][2]]}}
+          </view>
+        </picker>
+        <view class="lists-tj1" data-index="{{i}}" bindtap="bindtapAddServe">
+          <view>添加服务</view>
+        </view>
+      </view>
+      <!-- 服务1 -->
+      <view class="lists-fw" wx:for="{{addServices[i]}}" wx:key="{{index}}">
+        <input class="lists-fw-item" data-index="{{index}}" data-parentindex="{{i}}" type="text" bindinput="secordServicesName" value="{{item.servicesName}}" placeholder="服务名称" name="" />
+        <input class="lists-fw-item" data-index="{{index}}" data-parentindex="{{i}}" bindinput="secordServicesMoney" value="{{item.servicesMoney}}" type="number" placeholder="服务金额" name="" />
+        <view bindtap="bindtapDeleteServe" data-index="{{index}}" data-parentindex="{{i}}">删除服务</view>
+      </view>
+      <!-- 商品1总价 -->
+      <view class="lists-fw-jg">
+        <view class="lists-fw-jg-item" bindtap="bindtapAddLeather">添加皮具</view>
+        <view class="lists-fw-jg-wz">小计：￥{{moneys[i] == '' ? 0 : moneys[i]}}.00</view>
+        <view class="lists-fw-jg-item1" data-index="{{i}}" bindtap="bindtapDeleteLeather">删除商品</view>
+      </view>
+    </view>
+    <!-- 商品共计 -->
+    <view class="lists-in">
+      <view class="lists-input">
+        <text>预期时间：</text>
+        <picker class="picker" style="width: 250rpx;padding: 0 15rpx;border-radius: 15rpx; background-color: #fff; border: 1px solid #ddd;" mode="date" value="{{prefetchingTime}}" start="{{startTime}}" bindchange="handleDateChange">
+          <view class="picker" style="color: #555; font-size: 28rpx;">{{prefetchingTime == '0000-00-00' ? '暂无' : prefetchingTime}}</view>
+        </picker>
+      </view>
+      <view class="lists-input">
+        <text>快递定价：</text>
+        <input type="number" name="" value="{{datas.deliverMoney}}" bindinput="bindinputKd" placeholder="快递定价/元" placeholder-style="font-size:28rpx; color: #999;" />
+      </view>
+    </view>
+    <view class="lists-gj">
+      <text>商品数量：{{totals.length*1}}件</text>
+    </view>
+    <view class="lists-gj">
+      <text>商品共计：￥{{totalMoney == '' ? 0 : totalMoney}}.00</text>
+    </view>
+  </view>
+  <!-- 上传图片 -->
+  <view class="lists-sc" wx:if="{{statusMark == 1 ? true : false }}">
+    <!--  -->
+    <view class="lists-wz">上传照片</view>
+    <view class="lists-img">
+      <view wx:for="{{datas.gallerys}}" wx:key="{{index}}" wx:if="{{datas.gallerys[index]}}" class="lists-item">
+        <image src="{{datas.gallerys[index]}}" mode="aspectFill"></image>
+      </view>
+      <view class="lists-item" bindtap="handleChooseImage" wx:if="{{datas.isPay == 0 ? true : false }}">
+        <!-- !datas.deliverMoney || datas.deliverMoney == 0 ? true : false -->
+        <image src="../../assets/shang.jpg" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="lists-button" wx:if="{{!datas.isPay || datas.isPay == 0 ? true : false }}" bindtap="bindtapButton">
+    <button>{{!datas.deliverMoney || datas.deliverMoney == 0 ? '立即提交' : '立即修改'}}</button>
+  </view>
+</view>

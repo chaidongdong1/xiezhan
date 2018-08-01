@@ -1,0 +1,7 @@
+<!--pages/helplist/helplist.wxml-->
+<view class="list container">
+	<navigator wx:for="{{neirong}}" wx:key="{{index}}" class="list-one" url="../help/help?articleId={{item.articleId}}">
+		<view>{{item.articleTitle}}</view>
+		<view class="list-one-item"><image src="../../assets/youjt.png"></image></view>
+	</navigator>
+</view>

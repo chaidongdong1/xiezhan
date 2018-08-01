@@ -1,0 +1,119 @@
+<!--pages/inquiredetail/inquiredetail.wxml-->
+<view class="lists">
+  <!-- 订单详情 -->
+  <view class="lists-one">
+    <view>订单状态：
+      <text>{{datas.orderStatus}}</text>
+    </view>
+    <view>订单编号：{{datas.orderNo}}</view>
+  </view>
+  <!-- 下单信息 -->
+  <view class="lists-one1">
+    <view class="lists-one1-ys">
+      <text>姓名：{{datas.userName}}{{name}}</text>
+      <text>电话：{{datas.userPhone}}{{phone}}</text>
+    </view>
+    <view class="lists-one1-ys">收货地址：{{datas.userAddress}}{{address}}</view>
+    <view>预约时间：{{datas.receiveTime}}</view>
+    <view>备注信息：{{datas.orderRemarks}}</view>
+  </view>
+  <!-- 商品详情 -->
+  <view class="lis" wx:if="{{datas.totalMoney == 0 || !datas.totalMoney ? false : true }}">
+  	<!-- 商品1 -->
+    <view class="list-one2" wx:for="{{datas.goodsList}}" wx:for-index="i"  wx:for-item="iitem" wx:key="{{i}}">
+      <!-- 皮具 -->
+      <view class="list-top">
+        <text>类型:{{iitem.catName}}</text>
+        <text>品牌:{{iitem.brandName}}</text>
+        <text>颜色:{{iitem.color}}</text>
+      </view>
+      <!-- 服务 -->
+      <view class="list-bottom">
+        <view class="list-b1" wx:for="{{datas.goodsList[i].serverList}}"  wx:key="{{index}}">
+          <text>服务名称：{{item.serverName}}</text>
+          <text>服务金额：￥{{item.serverMoney}}</text>
+        </view>
+      </view>
+      <!-- 小计 -->
+      <view class="list-b2">小计：<text>￥{{moneys[i]}}.00</text></view>
+    </view>
+    <!-- 共计 -->
+    <veiw class="lists-one3">
+    	<view class="lists-one-sj">
+    		<text>预期时间：</text>
+    		<text>{{datas.completeTime}}</text>
+    	</view>
+    	<view class="lists-one-sj">
+    		<text>快递费：</text>
+    		<text style="color: #ff0000;font-size: 34rpx;">￥{{datas.deliverMoney}}</text>
+    	</view>
+    	<view class="lists-one-sj">
+    		<text>总计（含快递费）：</text>
+    		<text style="color: #ff0000;font-size: 34rpx;">￥{{datas.totalMoney*1+datas.deliverMoney*1}}.00</text>
+    	</view>
+      <view class="lists-one-sj" wx:if="{{!datas.realTotalMoney || datas.realTotalMoney == 0 ? false : true}}">
+        <text>实付（含快递费）：</text>
+        <text style="color: #ff0000;font-size: 34rpx;">￥{{datas.realTotalMoney}}</text>
+      </view>
+    </veiw>
+  </view>
+  <!-- 卡片信息 -->
+  <view class="lists-one1" wx:if="{{datas.isPay == 1 ? true : false}}" style="padding-top: 20rpx;border-top: 7px solid #ddd;">
+    <view class="lists-one1-ys">会员卡号：{{ucard.ucardNo}}</view>
+    <view class="lists-one1-ys">卡片名称：{{ucard.ucardName}}</view>
+    <view class="lists-one1-ys">卡片折扣：
+      <text style="color: #f00;">{{ucard.ucardDiscount*1/10}}折</text>
+    </view>
+  </view>
+  <!-- 商家信息 -->
+  <view class="lists-one5" style="border-top: 7px solid #ddd;padding-top: 20rpx; border-bottom: 0;">
+    <view style="padding-bottom: 10rpx;">商家名称：{{datas.shopName}}</view>
+    <view bindtap="shopTel">
+      <veiw>商家电话：{{datas.shopTel}}</veiw>
+      <veiw><image style="width: 40rpx;height: 40rpx;" src="../../assets/gray_arrow.png" mode="widthFix"></image></veiw>
+    </view>
+    <view bindtap="shopAddress">
+      <veiw>商家地址：{{datas.shopAddress}}</veiw>
+      <veiw><image style="width: 40rpx;height: 40rpx;" src="../../assets/gray_arrow.png" mode="widthFix"></image></veiw>
+    </view>
+  </view>
+  <!-- 提示信息 -->
+  <view class="lists-one" style="text-align: center; padding-top: 20rpx;color: #BC924E; font-size: 30rpx; border-top: 7px solid #ddd; border-bottom: 0;">
+    <view wx:if="{{datas.orderStatus == '下单成功'}}">下单成功，请等待商家接单</view>
+    <view wx:if="{{datas.orderStatus == '商家已受理' && datas.totalMoney == '0.00'}}">商家已接单，请等待上门取件</view>
+    <view wx:if="{{datas.orderStatus == '商家已受理' && datas.totalMoney != 0 && isPay == 0}}">商家已接单，请尽快付款</view>
+    <view wx:if="{{datas.realTotalMoney != 0 && datas.isPay == 1 && datas.orderStatus == '商家已受理' }}">商家正在维护中，请耐心等待</view>
+    <view wx:if="{{datas.realTotalMoney != 0 && datas.isPay == 1 && datas.orderStatus == '维护完成，上门送件'}}">商家维护已完成，正在送件中</view>
+    <view wx:if="{{datas.realTotalMoney != 0 && datas.isPay == 1 && datas.orderStatus == '订单完成' }}">订单已完成，欢迎您再次下单</view>
+  </view>
+  <!-- 快递信息 -->
+  <view class="kd" wx:if="{{!datas.deliverNo || datas.deliverNo == '' ? false : true }}">
+    <view class="inde-one">快递单号：{{datas.deliverNo}}</view>
+    <view class="inde-one">快递商家：{{datas.deliverType}}</view>
+    <view class="inde-one" style="padding-bottom: 50rpx;">快递价格：{{datas.deliverMoney}}</view>
+    <button bindtap="bindtapChakan">查看快递信息</button>
+    <!-- 中间的快递信息 -->
+    <view class="inde-kd" wx:for="{{chakan}}" wx:key="{{index}}">
+      <view class="inde-kd-left">
+        <view>{{item.time}}</view>
+      </view>
+      <!-- 正常 -->
+      <view class="inde-kd-center" wx:if="{{index == chakan.length - 1 || index == 0 ? false : true}}">
+        <view class="index-kd-ceyuan"></view>
+      </view>
+      <!-- 揽收 -->
+      <view class="inde-kd-center zuihou" wx:if="{{index == chakan.length - 1 ? true : false}}">
+        <image src="../../assets/lanshou.png" style="width:35rpx;height: 35rpx;"></image>
+      </view>
+      <!-- 签收 -->
+      <view class="inde-kd-center chushi" wx:if="{{chakanz == 4 && index == 0 ? true : false }}">
+        <image src="../../assets/shouhuo.png" style="width:35rpx;height: 35rpx;" mode="widthFix"></image>
+      </view>
+      <view class="inde-kd-right">
+        <view class="inde-kd-r-wz">{{item.context}}</view>
+      </view>
+      <!-- 没有快递信息时 -->
+      <view class="kd-zw" wx:if="{{chakan == 0 ? true : false }}">当前暂无快递信息</view>
+    </view>
+  </view>
+</view>

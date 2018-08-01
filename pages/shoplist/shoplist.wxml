@@ -1,0 +1,48 @@
+<!--pages/shoplist/shoplist.wxml-->
+<view class="list container">
+  <scroll-view scroll-x style="height: 100rpx;" scroll-left="{{scrollleft}}">
+    <view class="list-lb">
+      <view class="list-lb-one {{curIndex == 0 ? 'list-lb-active' : ''}}" bindtap="bindtap0">等待受理
+        <view class="list-sz" wx:if="{{!number[0] || number[0] == 0 ? false : true}}">{{number[0] > '99' ? '99+' : number[0]}}</view>
+      </view>
+      <view class="list-lb-one {{curIndex == 1 ? 'list-lb-active' : ''}}" bindtap="bindtap1">上门取件
+        <view class="list-sz" wx:if="{{!number[1] || number[1] == 0 ? false : true}}">{{number[1] > '99' ? '99+' : number[1]}}</view>
+      </view>
+      <view class="list-lb-one {{curIndex == 2 ? 'list-lb-active' : ''}}" bindtap="bindtap2">维护中
+        <view class="list-sz" wx:if="{{!number[2] || number[2] == 0 ? false : true}}">{{number[2] > '99' ? '99+' : number[2]}}</view>
+      </view>
+      <view class="list-lb-one {{curIndex == 3 ? 'list-lb-active' : ''}}" bindtap="bindtap3">上门送件
+        <view class="list-sz" wx:if="{{!number[3] || number[3] == 0 ? false : true}}">{{number[3] > '99' ? '99+' : number[3]}}</view>
+      </view>
+      <view class="list-lb-one {{curIndex == 4 ? 'list-lb-active' : ''}}" bindtap="bindtap4">已完成
+        <view class="list-sz" wx:if="{{!number[4] || number[4] == 0 ? false : true}}">{{number[4] > '99' ? '99+' : number[4]}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="list-one" wx:for="{{datas}}" wx:key="{{index}}">
+    <view>姓名:{{item.userName}}</view>
+    <view>电话:{{item.userPhone}}</view>
+    <view>地址:{{item.userAddress}}</view>
+    <view>预约时间:{{item.receiveTime}}</view>
+    <!-- <view>皮具类型:{{item.catName}}</view>
+    <view>品牌:{{item.brandName}}</view> -->
+    <view>原因:{{item.reason}}</view>
+    <view>备注：{{item.orderRemarks}}</view>
+    <view wx:if="{{!item.totalMoney || item.totalMoney == 0 ? false : true}}">订单金额:{{item.totalMoney}}</view>
+    <view wx:if="{{!item.deliverMoney || item.deliverMoney == 0 ? false : true}}">快递金额:{{item.deliverMoney}}</view>
+    <!-- 付款处理 -->
+     <view class="list-button" >   <!-- wx:if="{{curIndex == 1 ? true : false}}" -->
+      <button wx:if="{{item.isPay == 0 && item.totalMoney == 0 }}" bindtap="bindtapChuli" data-index="{{index}}">处理订单</button>
+      <button wx:if="{{item.isPay == 0 && item.totalMoney != 0}}" bindtap="bindtapChuli" data-index="{{index}}">修改订单</button>
+      <button wx:if="{{item.isPay != 0 }}" bindtap="bindtapChuli" data-index="{{index}}">查看详情</button>
+    </view>
+    <!-- 接单处理 -->
+    <view class="list-button" wx:if="{{curIndex == 0 ? true : false}}">
+      <button bindtap="bindtapJiedan" data-index="{{index}}">处理订单</button>
+    </view>
+  </view>
+  <!-- 加载到底部时 -->
+  <view wx:if="{{currPage >= totalPage && datas.length != 0 && datas.length > 4 }}" style="font-size: 28rpx; color: #666; margin: 15rpx auto; text-align: center; width: 100%;">别扯了,到底了</view>
+  <!-- 没有订单时 -->
+  <view wx:if="{{!datas || datas.length == 0}}" style="font-size: 28rpx; color: #666; margin: 20rpx auto; text-align: center; width: 100%;">当前没有订单</view>
+</view>

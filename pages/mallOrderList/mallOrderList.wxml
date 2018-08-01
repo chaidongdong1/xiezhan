@@ -1,0 +1,42 @@
+<!--pages/mallOrderList/mallOrderList.wxml-->
+<view class="page-wapper">
+  <view class="header">
+    <view wx:for="{{navs}}" wx:key="{{index}}" class="f28 gray01 {{index == currentIndex?'active':''}}" bindtap="handleCheckout" data-index="{{index}}">{{item.name}}</view>
+  </view>
+  <view class="placeholder-box100"></view>
+  <view class="order-list-wapper">
+    <view class="order-list-item" wx:for="{{navs[currentIndex].lists}}" wx:key="{{index}}">
+      <view class="order-list-header" bindtap="handleGoOrderDetail" data-orderid="{{item.orderId}}">
+        <view class="lside f28 gray03">{{item.orderNo}}</view>
+        <view class="rside f28 gray04">{{item.createTime}}</view>
+      </view>
+      <view class="order-list-main" bindtap="handleGoOrderDetail" data-orderid="{{item.orderId}}">
+        <view class="order-list-goods" wx:for="{{item.goodsList}}" wx:for-index="j" wx:for-item="sub" wx:key="{{j}}">
+          <view class="lside">
+            <image src="{{baseUrl}}{{sub.goodsThums}}" mode="aspectFill"></image>
+          </view>
+          <view class="rside">
+            <view class="gray02 f28">{{sub.goodsName}}</view>
+            <view class="f24 gray05">规格：{{sub.goodsAttrName}}</view>
+            <view class="f24 gray05">价格：
+              <text class="f32 red-color">￥{{sub.goodsPrice}}</text>
+            </view>
+          </view>
+          <view class="f28 gray05">
+            x{{sub.goodsNums}}
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{navs[currentIndex].status != 1}}" class="order-list-footer">
+        <view wx:if="{{navs[currentIndex].status == 2}}" data-orderid="{{item.orderId}}" data-index="{{index}}" bindtap="handleConfirmOrder">确认收货</view>
+        <view wx:if="{{navs[currentIndex].status == 3}}" data-orderid="{{item.orderId}}" data-index="{{index}}" bindtap="handleDeleteOrder">删除订单</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-loadmore" wx:if="{{!navs[currentIndex].nomore && !navs[currentIndex].nodata}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="nodata f32 gray02" wx:if="{{navs[currentIndex].nodata}}">暂无{{navs[currentIndex].name}}订单</view>
+  <view wx:if="{{navs[currentIndex].nomore && !navs[currentIndex].nodata}}" class="nomore f28 gray02">已加载全部订单</view>
+</view>

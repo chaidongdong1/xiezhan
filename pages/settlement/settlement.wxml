@@ -1,0 +1,63 @@
+<!--pages/settlement/settlement.wxml-->
+<view class="yyxd">
+  <!-- 收货地址 -->
+  <navigator class="shou" url="../selectaddress/selectaddress">
+    <view class="shou-image">
+      <image src="../../assets/yuyue3.png" mode="widthFix"></image>
+    </view>
+    <view class="shou-wz" wx:if="{{address}}">
+      <view>
+        <text class="shou-text">姓名：{{address.userName}}</text>
+        <text>电话：{{address.userPhone}}</text>
+      </view>
+      <view>
+        <text>地址：{{address.address}}</text>
+      </view>
+    </view>
+    <view class="shou-wz" wx:if="{{!address}}">
+      <view style="line-height: 90rpx;">请选择地址</view>
+    </view>
+    <view class="show-tb">
+      <image style="width: 50rpx;height: 50rpx;" src="../../assets/gray_arrow.png" mode="widthFix"></image>
+    </view>
+  </navigator>
+  <!-- 商品列表 -->
+  <view class="pro-item" wx:for="{{lists}}" wx:key="index" data-index="{{index}}">
+    <view class="item-content" bindtap="handleNavigateToDetail">
+      <view class="thumbnail">
+        <image src="{{baseUrl}}{{item.goodsThums}}" style="width:190rpx; height: 190rpx;" mode="aspectFill"></image>
+      </view>
+      <view class="info" id="{{index}}">
+        <view class="f28 gray01">{{item.goodsName}}</view>
+        <view class="f24 gray04 price">
+          <view>规格:
+            <text class="gray01"> {{item.attrName}}</text>
+          </view>
+        </view>
+        <view class="f24 gray04">
+          价格:
+          <text class="red-color f28">￥{{item.attrPrice}}</text>
+        </view>
+      </view>
+      <view class="f28 num">x{{item.total}}</view>
+    </view>
+  </view>
+  <view class="remark-info f28 gray03">总计<text class="red-color f36">￥{{totalPrice}}</text></view>
+  <!-- 备注 -->
+  <view class="yyxd-name" style="padding-top: 10px; height: auto;">
+    <view class="yyxd-name-tb yyxd-name-item">
+      <image src="../../assets/yuyue8.png" mode="widthFix"></image>
+    </view>
+    <view class="yyxd-name-wz yyxd-name-item">
+      <view>备</view>
+      <view>注:</view>
+    </view>
+    <view class="yyxd-name-input yyxd-name-item">
+      <textarea vlaue="" placeholder="请输入备注信息（不超过200字）" maxlength="200" placeholder-style="font-size:26rpx;color:#333;" adjust-position="true" bindinput="handleRecordBei"></textarea>
+    </view>
+  </view>
+  <!-- 提交订单 -->
+  <view class="yyxd-button" bindtap="handleSubmitOrder">
+    <button>提交订单</button>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/help/help.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="help container">
+  <view class="help-title">{{neirong.articleTitle}}</view>
+  <view style="width: 100%;"><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>
+</view>

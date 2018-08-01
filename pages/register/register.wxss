@@ -1,0 +1,150 @@
+/* pages/register/register.wxss */
+.register{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+.regis-bj{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.regis-bj image{
+	width: 100%;
+	height: 100%;
+}
+.regis-nr{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.regis-logo{
+	width: 34%;
+	height: auto;
+	margin: 20% 33% 20% 33%;
+}
+.regis-logo image{
+	width: 100%;
+	height: auto;
+}
+.regis-text{
+	font-size: 46rpx;
+	text-align: center;
+	color: #fff;
+}
+.regis-te-nr{
+	font-size: 34rpx;
+	color: #eee;
+	margin-top: 10px;
+}
+.regis-button{
+	width: 70%;
+	height: auto;
+	margin: 10% 15% 0 15%;
+}
+.regis-bt1{
+	width: 100%;
+	height: 100rpx;
+	color: #fff;
+	font-size: 32rpx;
+	background-color: #77521d;
+	text-align: center;
+	line-height: 100rpx;
+	border-radius: 5px;
+	margin-bottom: 60rpx;
+}
+.regis-bt2{
+	width: 100%;
+	height: 100rpx;
+	background-color: #f1ebdf;
+	text-align: center;
+	line-height: 100rpx;
+	border-radius: 5px;
+	color: #333;
+	font-size: 32rpx;
+}
+/*授权按钮*/
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 99999;
+}
+
+.content {
+  width: 80%;
+  height: 340rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-100rpx);
+  box-sizing: border-box;
+  padding: 20rpx;
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.content .h1 {
+  text-align: center;
+  font-size: 34rpx;
+  padding: 10rpx 0 20rpx;
+  color: #333;
+  line-height: 50rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.h2 {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 70rpx;
+  padding: 10rpx 0 0 30rpx;
+}
+
+.h3 {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 0 0 30rpx;
+}
+
+.h3 text {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #ccc;
+  border-radius: 50%;
+  vertical-align: middle;
+  position: relative;
+  top: -2rpx;
+  margin-right: 10rpx;
+}
+
+.btnaa {
+  display: block;
+  width: 110%;
+  transform: translateX(-5%);
+  border-radius: 0;
+  padding: 0 10rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  font-size: 32rpx;
+  color: #15b516;
+}
