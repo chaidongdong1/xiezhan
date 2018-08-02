@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/register/register",
+    "pages/mall/mall",
+    "pages/goodsList/goodsList",
     "pages/mallOrderList/mallOrderList",
     "pages/modification/modification",
     "pages/mycard/mycard",
@@ -11,12 +13,9 @@
     "pages/inquire/inquire",
     "pages/index/index",
     "pages/referralcode/referralcode",
-    
-    "pages/mall/mall",
     "pages/mallOrderDetail/mallOrderDetail",
     "pages/settlement/settlement",
     "pages/goodsDetail/goodsDetail",
-    "pages/goodsList/goodsList",
     "pages/trolley/trolley",
     "pages/shopregister/shopregister",
     "pages/message/message",

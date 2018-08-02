@@ -1,13 +1,33 @@
 <!--pages/goodsList/goodsList.wxml-->
 <view class="page-wapper">
-  <lists lists="{{lists}}" loadingStatus="{{loadingStatus}}"></lists>
+  <!-- 分类 -->
+  <view class="goods">
+    <view class="{{goodsIndex == index ? 'goods-quan' : ''}}" wx:for="{{goodsList}}" wx:key="{{index}}" data-catid="{{item.catId}}" data-index="{{index}}" bindtap="bindDao">{{item.catName}}</view>
+  </view>
+  <!-- <lists lists="{{lists}}" loadingStatus="{{loadingStatus}}"></lists> -->
   <!-- loadmore -->
-  <block wx:if="{{isLoadMore}}">
+  <!-- <block wx:if="{{isLoadMore}}">
     <view class="weui-loadmore">
       <view class="weui-loading"></view>
       <view class="weui-loadmore__tips">正在加载</view>
     </view>
-  </block>
+  </block> -->
+  <view class="mall-o-shop">
+    <!-- 第一件商品 -->
+    <view class="shop-item" bindtap="bindDetail" wx:for="{{datas}}" wx:key="{{item}}" data-goodsid="{{item.goodsId}}">
+      <view>
+        <image src="{{baseUrl}}{{item.goodsThums}}"></image>
+      </view>
+      <view>{{item.goodsName}}</view>
+      <view>
+        <view>￥{{item.shopPrice}}</view>
+        <view>立即购买</view>
+      </view>
+    </view>
+    <!-- 暂无商品 -->
+    <view class="mall-shop-wu" wx:if="{{!datas || datas.length == 0}}">—— 暂无商品 ——</view>
+    <view class="mall-shop-wu" wx:if="{{datas.length != 0 && totalPage == currPage}}">—— 别扯了，到底了 ——</view>
+  </view>
   <navigator url="../trolley/trolley">
     <view class="arc-btn-lg trolley">
       <image src="../../assets/mall_02.png" style="width: 58rpx;height: 58rpx"></image>

@@ -1,5 +1,5 @@
 <!--pages/mall/mall.wxml-->
-<view class="page-wapper">
+<!-- <view class="page-wapper">
   <view class="goods-container">
     <scroll-view scroll-y class="nav">
       <view class="nav-wapper">
@@ -29,4 +29,30 @@
       <view class="corner" wx:if="{{totalTrolleyLen!=0}}">{{totalTrolleyLen}}</view>
     </view>
   </navigator>
+</view> -->
+<!-- 修改后 -->
+<view class="mall">
+  <!-- 第一类 -->
+  <view class="mall-one" wx:for="{{datas}}" wx:key="{{index}}" wx:for-item="i" wx:if="{{!i.goodsList || i.goodsList.length == 0 ? flase : true}}">
+    <!-- 头部 -->
+    <view class="mall-o-top" bindtap="bindDao" data-catid="{{i.catId}}">
+      <view><image src="{{baseUrl}}{{i.catImg}}"></image></view>
+      <view>{{i.catName}}</view>
+      <view>
+        <text>更多</text>
+        <image src="../../assets/gray_arrow.png"></image>
+      </view>
+    </view>
+    <!-- 商品 -->
+    <view class="mall-o-shop">
+      <!-- 第一件商品 -->
+      <view class="shop-item" bindtap="bindDetail" wx:for="{{i.goodsList}}" wx:key="{{item}}" data-goodsid="{{item.goodsId}}">
+        <view><image src="{{baseUrl}}{{item.goodsThums}}"></image></view>
+        <view>{{item.goodsName}}</view>
+        <view><text>￥{{item.shopPrice}}</text></view>
+      </view>
+      <!-- 暂无商品 -->
+      <view class="mall-shop-wu" wx:if="{{!i.goodsList || i.goodsList.length == 0}}">—— 暂无商品 ——</view>
+    </view>
+  </view>
 </view>
